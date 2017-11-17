@@ -15,6 +15,12 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     public static final String TABLE_NAME = "list_table";
     public static final String COL_1 = "ID";
 
+    public DatabaseHelper(Context context) {
+        super(context, DATABASE_NAME, null, 1);
+        SQLiteDatabase db = this.getWritableDatabase();
+
+    }
+
 
     @Override
     public void onCreate(SQLiteDatabase sqLiteDatabase) {
