@@ -1,4 +1,4 @@
-package com.example.johnd.androidstudiotodolist;
+package com.example.johnd.androidstudiotodolist.models;
 
 /**
  * Created by JohnD on 17/11/2017.

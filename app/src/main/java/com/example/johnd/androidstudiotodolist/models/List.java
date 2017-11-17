@@ -1,4 +1,6 @@
-package com.example.johnd.androidstudiotodolist;
+package com.example.johnd.androidstudiotodolist.models;
+
+import com.example.johnd.androidstudiotodolist.models.ListItem;
 
 import java.util.ArrayList;
 

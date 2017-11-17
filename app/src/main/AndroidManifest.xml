@@ -18,6 +18,12 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".ListView"
+            android:label="@string/title_activity_list_view" />
+        <activity
+            android:name=".Update"
+            android:label="@string/title_activity_update"></activity>
     </application>
 
 </manifest>
