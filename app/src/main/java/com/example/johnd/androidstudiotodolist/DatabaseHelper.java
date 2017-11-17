@@ -18,6 +18,8 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     public static final String COL_DESCRIPTION = "description";
     public static final String COL_COMPLETED = "completed";
     public static final String COL_PRIORITY = "priority";
+    private static DatabaseHelper mDatabaseInstance = null;
+    private Context mContext;
 
     public DatabaseHelper(Context context) {
         super(context, DATABASE_NAME, null, 1);
@@ -34,6 +36,16 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
     @Override
     public void onUpgrade(SQLiteDatabase sqLiteDatabase, int oldVersion, int newVersion) {
-
     }
+
+
+    // not sure the following is required - if issues remove.
+    public static DatabaseHelper newInstance(Context context){
+        if (mDatabaseInstance == null){
+            mDatabaseInstance = new DatabaseHelper(context.getApplicationContext());
+        }
+        return mDatabaseInstance;
+    }
+
+
 }
