@@ -21,7 +21,7 @@ public class Update extends AppCompatActivity {
                     mTextMessage.setText(R.string.title_home);
                     return true;
                 case R.id.navigation_ListView:
-                    mTextMessage.setText(R.string.title_dashboard);
+                    mTextMessage.setText(R.string.title_activity_list_view);
                     return true;
                 case R.id.navigation_Update:
                     mTextMessage.setText(R.string.title_notifications);
