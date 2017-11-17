@@ -1,5 +1,6 @@
 package com.example.johnd.androidstudiotodolist;
 
+import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
@@ -10,7 +11,8 @@ import android.widget.TextView;
 public class MainActivity extends AppCompatActivity {
 
     private TextView mTextMessage;
-    DatabaseHelper mydb;
+    private DatabaseHelper mDBHelper;
+    private SQLiteDatabase mDataBase;
 
     private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
             = new BottomNavigationView.OnNavigationItemSelectedListener() {
@@ -41,8 +43,9 @@ public class MainActivity extends AppCompatActivity {
         BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.navigation);
         navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
 
-
-        mydb = new DatabaseHelper(this);
+        mDBHelper = new DatabaseHelper(this);
+        mDataBase = mDBHelper.getWritableDatabase();
+        mDataBase.close();
     }
 
 }
