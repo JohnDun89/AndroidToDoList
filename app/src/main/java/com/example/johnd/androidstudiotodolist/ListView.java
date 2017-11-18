@@ -17,27 +17,10 @@ import java.util.ArrayList;
 
 public class ListView extends AppCompatActivity {
 
-//    private TextView mTextMessage;
-
-
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_list_view);
-
-        List list = new List();
-
-        ArrayList<ListItem> item = list.getList();
-
-        ListAdapter listAdapter = new ListAdapter(this, item);
-
-        android.widget.ListView listView = findViewById(R.id.list);
-
-        listView.setAdapter(listAdapter);
+    private TextView mTextMessage;
 
 
 
-    }
 
     private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
             = new BottomNavigationView.OnNavigationItemSelectedListener() {
@@ -64,9 +47,30 @@ public class ListView extends AppCompatActivity {
         };
 
 
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_list_view);
+
+        List list = new List();
+
+        ArrayList<ListItem> item = list.getList();
+
+        ListAdapter listAdapter = new ListAdapter(this, item);
+
+        android.widget.ListView listView = findViewById(R.id.list);
+
+        listView.setAdapter(listAdapter);
+
+        mTextMessage = (TextView) findViewById(R.id.message);
+        BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.navigation);
+        navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
+
+
+
+    }
+
+
 
 }
 
-//        mTextMessage = (TextView) findViewById(R.id.message);
-//        BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.navigation);
-//        navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
