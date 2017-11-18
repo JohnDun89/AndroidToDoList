@@ -32,4 +32,17 @@ public class ListItemTest {
         assertEquals(false,item.getComplete());
     }
 
+
+    @Test
+    public void canComplete() throws Exception {
+        ListItem item = new ListItem("wash bike");
+        item.complete();
+        assertEquals(true, item.getComplete());
+
+    }
+
+    @Test
+    public void unComplete() throws Exception {
+    }
+
 }

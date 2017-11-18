@@ -36,4 +36,12 @@ public class ListItem {
     public boolean getComplete(){
         return this.completed;
     }
+
+    public void complete(){
+        this.completed = true;
+    }
+
+    public void unComplete(){
+        this.completed = false;
+    }
 }
