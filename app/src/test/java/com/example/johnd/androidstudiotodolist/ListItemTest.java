@@ -1,5 +1,6 @@
 package com.example.johnd.androidstudiotodolist;
 
+import com.example.johnd.androidstudiotodolist.models.List;
 import com.example.johnd.androidstudiotodolist.models.ListItem;
 
 import org.junit.Test;
@@ -18,5 +19,11 @@ public class ListItemTest {
         assertEquals(null, item.getDescription());
     }
 
+    @Test
+    public void canSetDescription(){
+        ListItem item = new ListItem("wash car");
+        item.setDescription("remember to hoover inside.");
+        assertEquals("remember to hoover inside.",item.getDescription());
+    }
 
 }
