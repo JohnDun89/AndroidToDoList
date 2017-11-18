@@ -9,9 +9,35 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.MenuItem;
 import android.widget.TextView;
 
+import com.example.johnd.androidstudiotodolist.models.List;
+import com.example.johnd.androidstudiotodolist.models.ListAdapter;
+import com.example.johnd.androidstudiotodolist.models.ListItem;
+
+import java.util.ArrayList;
+
 public class ListView extends AppCompatActivity {
 
-    private TextView mTextMessage;
+//    private TextView mTextMessage;
+
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_list_view);
+
+        List list = new List();
+
+        ArrayList<ListItem> item = list.getList();
+
+        ListAdapter listAdapter = new ListAdapter(this, item);
+
+        android.widget.ListView listView = findViewById(R.id.list);
+
+        listView.setAdapter(listAdapter);
+
+
+
+    }
 
     private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
             = new BottomNavigationView.OnNavigationItemSelectedListener() {
@@ -37,14 +63,10 @@ public class ListView extends AppCompatActivity {
             }
         };
 
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_list_view);
 
-        mTextMessage = (TextView) findViewById(R.id.message);
-        BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.navigation);
-        navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
-    }
 
 }
+
+//        mTextMessage = (TextView) findViewById(R.id.message);
+//        BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.navigation);
+//        navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
