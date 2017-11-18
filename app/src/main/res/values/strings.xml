@@ -5,4 +5,5 @@
     <string name="title_notifications">Statistics</string>
     <string name="title_activity_list_view">ListView</string>
     <string name="title_activity_update">Update</string>
+    <string name="to_do_title" />
 </resources>

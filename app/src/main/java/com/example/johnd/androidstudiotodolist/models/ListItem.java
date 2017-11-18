@@ -10,4 +10,12 @@ public class ListItem {
     private String name;
     private String description;
     private boolean completed;
+
+    public ListItem(String name) {
+        this.name = name;
+    }
+
+    public Object getTitle() {
+        return name;
+    }
 }
