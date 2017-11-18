@@ -30,4 +30,8 @@ public class List {
     public ArrayList<ListItem> getList(){
         return new ArrayList<>(ToDoList);
     }
+
+    public void addItem(ListItem listItem){
+        ToDoList.add(listItem);
+    }
 }
