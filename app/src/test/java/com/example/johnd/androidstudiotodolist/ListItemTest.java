@@ -43,6 +43,10 @@ public class ListItemTest {
 
     @Test
     public void unComplete() throws Exception {
+        ListItem item = new ListItem("wash bike");
+        item.complete();
+        item.unComplete();
+        assertEquals(false, item.getComplete());
     }
 
 }
