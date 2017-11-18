@@ -7,6 +7,7 @@ import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.TextView;
 
+
 import com.example.johnd.androidstudiotodolist.R;
 
 import java.util.ArrayList;
@@ -30,9 +31,9 @@ public class ListAdapter extends ArrayAdapter<ListItem> {
         ListItem currentListItem = getItem(position);
 
         TextView title = listItemView.findViewById(R.id.to_do_title);
-        title.setText(currentListItem.getTitle().tostring);
+        title.setText(currentListItem.getTitle().toString());
 
-        listItemView.setTag(currentListItem;
+        listItemView.setTag(currentListItem);
         return listItemView;
 
     }

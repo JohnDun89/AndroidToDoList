@@ -1,5 +1,7 @@
 package com.example.johnd.androidstudiotodolist;
 
+import android.app.ListActivity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
@@ -14,22 +16,26 @@ public class ListView extends AppCompatActivity {
     private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
             = new BottomNavigationView.OnNavigationItemSelectedListener() {
 
-        @Override
-        public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-            switch (item.getItemId()) {
-                case R.id.navigation_home:
-                    mTextMessage.setText(R.string.title_home);
-                    return true;
-                case R.id.navigation_ListView:
-                    mTextMessage.setText(R.string.title_activity_list_view);
-                    return true;
-                case R.id.navigation_Update:
-                    mTextMessage.setText(R.string.title_activity_update);
-                    return true;
+
+            @Override
+            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+                switch (item.getItemId()) {
+                    case R.id.navigation_home:
+                        Intent intent1 = new Intent(ListView.this, MainActivity.class);
+                        startActivity(intent1);
+                        return true;
+                    case R.id.navigation_ListView:
+                        Intent intent2 = new Intent(ListView.this, ListView.class);
+                        startActivity(intent2);
+                        return true;
+                    case R.id.navigation_Update:
+                        Intent intent3 = new Intent(ListView.this, Update.class);
+                        startActivity(intent3);
+                        return true;
+                }
+                return false;
             }
-            return false;
-        }
-    };
+        };
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

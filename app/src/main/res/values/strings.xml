@@ -3,7 +3,9 @@
     <string name="title_home">Home</string>
     <string name="title_dashboard">List</string>
     <string name="title_notifications">Statistics</string>
-    <string name="title_activity_list_view">ListView</string>
+    <string name="title_activity_ListView">ListView</string>
     <string name="title_activity_update">Update</string>
     <string name="to_do_title" />
+    <string name="title_activity_list_view">View List</string>
+    <string name="title_activity_page">page</string>
 </resources>

@@ -1,5 +1,7 @@
 package com.example.johnd.androidstudiotodolist;
 
+import android.app.ListActivity;
+import android.content.Intent;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
@@ -21,13 +23,16 @@ public class MainActivity extends AppCompatActivity {
         public boolean onNavigationItemSelected(@NonNull MenuItem item) {
             switch (item.getItemId()) {
                 case R.id.navigation_home:
-                    mTextMessage.setText(R.string.title_home);
+                    Intent intent1 = new Intent(MainActivity.this, MainActivity.class);
+                    startActivity(intent1);
                     return true;
                 case R.id.navigation_ListView:
-                    mTextMessage.setText(R.string.title_activity_list_view);
+                    Intent intent2 = new Intent(MainActivity.this, ListView.class);
+                    startActivity(intent2);
                     return true;
                 case R.id.navigation_Update:
-                    mTextMessage.setText(R.string.title_activity_update);
+                    Intent intent3 = new Intent(MainActivity.this, Update.class);
+                    startActivity(intent3);
                     return true;
             }
             return false;
