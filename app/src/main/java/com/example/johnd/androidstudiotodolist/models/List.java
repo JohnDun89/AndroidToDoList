@@ -26,12 +26,17 @@ public class List {
         ToDoList.add(new ListItem("visit barbers"));
     }
 
+    public void addItem(ListItem listItem){
+        ToDoList.add(listItem);
+    }
 
     public ArrayList<ListItem> getList(){
         return new ArrayList<>(ToDoList);
     }
 
-    public void addItem(ListItem listItem){
-        ToDoList.add(listItem);
-    }
+//    public void removeItem(){
+//        ToDoList.removeIf()
+//    }
+
+
 }

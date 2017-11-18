@@ -13,9 +13,23 @@ public class ListItem {
 
     public ListItem(String name) {
         this.name = name;
+        this.description = description;
+        this.completed = false;
     }
 
     public Object getTitle() {
         return name;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    public String getDescription(){
+        return this.description;
     }
 }
