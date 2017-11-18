@@ -26,4 +26,10 @@ public class ListItemTest {
         assertEquals("remember to hoover inside.",item.getDescription());
     }
 
+    @Test
+    public void canGetIfComplete(){
+        ListItem item = new ListItem("wash bike");
+        assertEquals(false,item.getComplete());
+    }
+
 }

@@ -32,4 +32,8 @@ public class ListItem {
     public String getDescription(){
         return this.description;
     }
+
+    public boolean getComplete(){
+        return this.completed;
+    }
 }
