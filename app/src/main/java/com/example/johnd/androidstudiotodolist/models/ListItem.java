@@ -30,8 +30,9 @@ public class ListItem {
         return id;
     }
 
-    public void setID(Integer number){
-        this.id = number;
+    public void setID(String number){
+       Integer result = Integer.valueOf(number);
+       this.id = result;
     }
 
     public void setDescription(String description) {
