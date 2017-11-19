@@ -9,9 +9,25 @@
 
     <TextView
         android:id="@+id/to_do_title"
-        android:layout_width="84dp"
-        android:layout_height="87dp"
+        android:layout_width="260dp"
+        android:layout_height="82dp"
+        android:layout_marginStart="16dp"
         android:text="@string/to_do_title"
-        tools:layout_editor_absoluteX="26dp"
+        android:textAlignment="center"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="parent"
         tools:layout_editor_absoluteY="16dp" />
+
+    <Button
+        android:id="@+id/more_button"
+        android:layout_width="78dp"
+        android:layout_height="85dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="12dp"
+        android:text="More"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/to_do_title"
+        tools:layout_editor_absoluteY="16dp"
+        tools:text="More" />
+
 </android.support.constraint.ConstraintLayout>
