@@ -8,4 +8,6 @@
     <string name="to_do_title" />
     <string name="title_activity_list_view">View List</string>
     <string name="title_activity_page">page</string>
+    <string name="Add_To_List">Add To Lsit</string>
+    <string name="title_activity_add_form">AddForm</string>
 </resources>
