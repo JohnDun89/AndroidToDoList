@@ -54,7 +54,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         ContentValues contentValues = new ContentValues();
         contentValues.put(COL_TITLE, title);
         contentValues.put(COL_DESCRIPTION, description);
-        contentValues.put(COL_COMPLETED, Boolean.FALSE);
+        contentValues.put(COL_COMPLETED, "false");
         contentValues.put(COL_PRIORITY, priority);
         sqLiteDatabase.insert(TABLE_NAME,null,contentValues);
         return true;
