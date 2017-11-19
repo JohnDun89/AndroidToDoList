@@ -72,18 +72,22 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 //        return result;
 //    }
 
-//    public ArrayList<ListItem> getAllItems(){
-//        SQLiteDatabase sqLiteDatabase = this.getReadableDatabase();
-//        Cursor cursor = sqLiteDatabase.rawQuery("SELECT * FROM " + TABLE_NAME, null);
-//        ArrayList<ListItem> list = new ArrayList<ListItem>();
-//        ListItem listItem;
-//        if (cursor.getCount() > 0 ){
-//            for (int i = 0; i < cursor.getCount(); i++);
-//            cursor.moveToNext();
-//            listItem = new ListItem();
-//            listItem.setID();
-//        }
-//    }
+    public ArrayList<ListItem> getAllItems(){
+        SQLiteDatabase sqLiteDatabase = this.getReadableDatabase();
+        Cursor cursor = sqLiteDatabase.rawQuery("SELECT * FROM " + TABLE_NAME, null);
+        ArrayList<ListItem> list = new ArrayList<ListItem>();
+        ListItem listItem;
+        if (cursor.getCount() > 0 ){
+            for (int i = 0; i < cursor.getCount(); i++);
+            cursor.moveToNext();
+            listItem = new ListItem();
+            listItem.setID(cursor.getString(0));
+            listItem.setname(cursor.getString(1));
+            listItem.setDescription(cursor.getString(2));
+            listItem.setCompleted(cursor.getString(3));
+            listItem.setPriority(cursor.getString());
+        }
+    }
 
 
 }

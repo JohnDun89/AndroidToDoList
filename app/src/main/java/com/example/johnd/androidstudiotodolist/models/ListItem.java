@@ -10,12 +10,14 @@ public class ListItem {
     private String name;
     private String description;
     private boolean completed;
+    private Integer priority;
 
     public ListItem() {
         this.id = id;
         this.name = name;
         this.description = description;
         this.completed = false;
+        this.priority = priority;
     }
 
     public Object getTitle() {
@@ -53,5 +55,15 @@ public class ListItem {
 
     public void unComplete(){
         this.completed = false;
+    }
+
+    public void setCompleted(String status){
+        Boolean result = Boolean.valueOf(status);
+        this.completed = result;
+    }
+
+    public void setPriority(String numericPriority){
+        Integer result = Integer.valueOf(numericPriority);
+        this.priority = result;
     }
 }
