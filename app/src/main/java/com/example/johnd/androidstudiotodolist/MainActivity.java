@@ -15,8 +15,8 @@ import android.widget.TextView;
 public class MainActivity extends AppCompatActivity {
 
     private TextView mTextMessage;
-    private DatabaseHelper mDBHelper;
-    private SQLiteDatabase mDataBase;
+//    private DatabaseHelper mDBHelper;
+//    private SQLiteDatabase mDataBase;
 
     private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
             = new BottomNavigationView.OnNavigationItemSelectedListener() {
@@ -50,9 +50,9 @@ public class MainActivity extends AppCompatActivity {
         BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.navigation);
         navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
 
-        mDBHelper = new DatabaseHelper(this);
-        mDataBase = mDBHelper.getWritableDatabase();
-        mDataBase.close();
+//        mDBHelper = new DatabaseHelper(this);
+//        mDataBase = mDBHelper.getWritableDatabase();
+//        mDataBase.close();
     }
 
 //    @Override

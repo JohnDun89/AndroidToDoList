@@ -1,5 +1,6 @@
 package com.example.johnd.androidstudiotodolist;
 
+import android.content.ContentValues;
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
@@ -23,7 +24,6 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
     public DatabaseHelper(Context context) {
         super(context, DATABASE_NAME, null, 1);
-        SQLiteDatabase sqLiteDatabase = this.getWritableDatabase();
 
     }
 
@@ -47,6 +47,17 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             mDatabaseInstance = new DatabaseHelper(context.getApplicationContext());
         }
         return mDatabaseInstance;
+    }
+
+    public boolean insertData(String title, String description, String priority ){
+        SQLiteDatabase sqLiteDatabase = this.getWritableDatabase();
+        ContentValues contentValues = new ContentValues();
+        contentValues.put(COL_TITLE, title);
+        contentValues.put(COL_DESCRIPTION, description);
+        contentValues.put(COL_COMPLETED, Boolean.FALSE);
+        contentValues.put(COL_PRIORITY, priority);
+        sqLiteDatabase.insert(TABLE_NAME,null,contentValues);
+        return true;
     }
 
 
