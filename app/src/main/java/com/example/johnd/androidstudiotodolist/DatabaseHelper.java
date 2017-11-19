@@ -2,8 +2,13 @@ package com.example.johnd.androidstudiotodolist;
 
 import android.content.ContentValues;
 import android.content.Context;
+import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
+
+import com.example.johnd.androidstudiotodolist.models.ListItem;
+
+import java.util.ArrayList;
 
 
 /**
@@ -26,6 +31,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         super(context, DATABASE_NAME, null, 1);
 
     }
+
 
 
     @Override
@@ -58,6 +64,25 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         contentValues.put(COL_PRIORITY, priority);
         sqLiteDatabase.insert(TABLE_NAME,null,contentValues);
         return true;
+    }
+
+//    public Cursor getAllItems(){
+//        SQLiteDatabase sqLiteDatabase = this.getWritableDatabase();
+//        Cursor result = sqLiteDatabase.rawQuery("SELECT * FROM " + TABLE_NAME, null);
+//        return result;
+//    }
+
+    public ArrayList<ListItem> getAllItems(){
+        SQLiteDatabase sqLiteDatabase = this.getReadableDatabase();
+        Cursor cursor = sqLiteDatabase.rawQuery("SELECT * FROM " + TABLE_NAME, null);
+        ArrayList<ListItem> list = new ArrayList<ListItem>();
+        ListItem listItem;
+        if (cursor.getCount() > 0 ){
+            for (int i = 0; i < cursor.getCount(); i++);
+            cursor.moveToNext();
+            listItem = new ListItem();
+            listItem.set
+        }
     }
 
 

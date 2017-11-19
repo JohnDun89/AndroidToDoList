@@ -6,12 +6,13 @@ package com.example.johnd.androidstudiotodolist.models;
 
 public class ListItem {
 
-    private int id;
+    private Integer id;
     private String name;
     private String description;
     private boolean completed;
 
-    public ListItem(String name) {
+    public ListItem() {
+        this.id = id;
         this.name = name;
         this.description = description;
         this.completed = false;
@@ -21,8 +22,16 @@ public class ListItem {
         return name;
     }
 
+    public void setname(String name){
+        this.name = name;
+    }
+
     public int getId() {
         return id;
+    }
+
+    public void setID(Integer number){
+        this.id = number;
     }
 
     public void setDescription(String description) {

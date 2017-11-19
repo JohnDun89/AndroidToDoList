@@ -1,7 +1,11 @@
 package com.example.johnd.androidstudiotodolist.models;
 
+import android.content.Context;
+import android.database.Cursor;
 import android.widget.Toast;
 
+
+import com.example.johnd.androidstudiotodolist.DatabaseHelper;
 import com.example.johnd.androidstudiotodolist.models.ListItem;
 
 import java.util.ArrayList;
@@ -13,18 +17,23 @@ import java.util.ArrayList;
 public class List {
 
     private ArrayList<ListItem> ToDoList;
+    DatabaseHelper databaseHelper;
+    Cursor databaseItems;
 
-    public List(){
-        ToDoList = new ArrayList<ListItem>();
-        ToDoList.add(new ListItem("buy coffee"));
-        ToDoList.add(new ListItem("paint door"));
-        ToDoList.add(new ListItem("finish android project"));
-        ToDoList.add(new ListItem("create scrolling on android list view."));
-        ToDoList.add(new ListItem("finish oil painting"));
-        ToDoList.add(new ListItem("cancel gym membership"));
-        ToDoList.add(new ListItem("pratice illustrator"));
-        ToDoList.add(new ListItem("visit barbers"));
+    public List() {
+    this.ToDoList = new ArrayList<>();
+
+//        ToDoList.add(new ListItem("buy coffee"));
+//        ToDoList.add(new ListItem("paint door"));
+//        ToDoList.add(new ListItem("finish android project"));
+//        ToDoList.add(new ListItem("create scrolling on android list view."));
+//        ToDoList.add(new ListItem("finish oil painting"));
+//        ToDoList.add(new ListItem("cancel gym membership"));
+//        ToDoList.add(new ListItem("pratice illustrator"));
+//        ToDoList.add(new ListItem("visit barbers"));
     }
+
+
 
     public void addItem(ListItem listItem){
         ToDoList.add(listItem);
@@ -34,9 +43,7 @@ public class List {
         return new ArrayList<>(ToDoList);
     }
 
-//    public void removeItem(){
-//        ToDoList.removeIf()
-//    }
+
 
 
 }
