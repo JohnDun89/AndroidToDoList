@@ -107,14 +107,20 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 //
 //    }
 
-    public void update(ListItem item){
-        SQLiteDatabase sqLiteDatabase = this.getReadableDatabase();
-        ContentValues contentValues = new ContentValues();
-        contentValues.put(COL_TITLE, item.getTitle());
-        contentValues.put(COL_DESCRIPTION, item.getDescription());
-        contentValues.put(COL_COMPLETED, item.getComplete());
-        contentValues.put(COL_PRIORITY, item.getPriority());
-        sqLiteDatabase.update(TABLE_NAME, contentValues, COL_ID + " ?", new String[]{item.getIdString()});
+//    public void update(ListItem item){
+//        SQLiteDatabase sqLiteDatabase = this.getReadableDatabase();
+//        ContentValues contentValues = new ContentValues();
+//        contentValues.put(COL_TITLE, item.getTitle());
+//        contentValues.put(COL_DESCRIPTION, item.getDescription());
+//        contentValues.put(COL_COMPLETED, item.getComplete());
+//        contentValues.put(COL_PRIORITY, item.getPriority());
+//        sqLiteDatabase.update(TABLE_NAME, contentValues, COL_ID + " ? " , new String[]{item.getIdString()});
+//
+//    }
 
-    }
+        public void update(ListItem item) {
+            SQLiteDatabase sqLiteDatabase = this.getReadableDatabase();
+            sqLiteDatabase.execSQL("update " + TABLE_NAME + " set " + COL_TITLE + " = '" + item.getTitle() + "', " + COL_DESCRIPTION + " = '" + item.getDescription() + "', " + COL_PRIORITY + " = '" + item.getPriority() + "'," + COL_COMPLETED + " = '" + item.getComplete() + "' where " + COL_ID + " = '" + item.getIdString() + "'");
+            sqLiteDatabase.close();
+        }
 }
