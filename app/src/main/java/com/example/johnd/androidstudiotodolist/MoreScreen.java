@@ -1,11 +1,14 @@
 package com.example.johnd.androidstudiotodolist;
 
 import android.content.Intent;
+import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.TextView;
 
 import com.example.johnd.androidstudiotodolist.models.ListItem;
@@ -13,6 +16,7 @@ import com.example.johnd.androidstudiotodolist.models.ListItem;
 public class MoreScreen extends AppCompatActivity {
 
     private TextView mTextMessage;
+
 
     private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
             = new BottomNavigationView.OnNavigationItemSelectedListener() {
@@ -53,4 +57,13 @@ public class MoreScreen extends AppCompatActivity {
         title.setText(item.getTitle());
     }
 
+    public void onDeleteButtonClicked(View view){
+        DatabaseHelper databaseHelper = new DatabaseHelper(this);
+        ListItem listItem = (ListItem) getIntent().getSerializableExtra("ListItem");
+        Log.d("MoreView", "Delete Button clicked");
+        databaseHelper.deleteItem(listItem);
+        Intent intent = new Intent(MoreScreen.this, ListView.class);
+
+        startActivity(intent);
+    }
 }

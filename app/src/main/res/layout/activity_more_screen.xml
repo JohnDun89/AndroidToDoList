@@ -29,6 +29,7 @@
         android:layout_marginTop="8dp"
         android:text="@string/delete_button"
         android:textAlignment="center"
+        android:onClick="onDeleteButtonClicked"
         app:layout_constraintBottom_toTopOf="@+id/navigation"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.907"
