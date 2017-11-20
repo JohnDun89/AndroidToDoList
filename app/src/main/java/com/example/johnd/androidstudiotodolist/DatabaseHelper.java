@@ -1,5 +1,6 @@
 package com.example.johnd.androidstudiotodolist;
 
+import android.content.ClipData;
 import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
@@ -65,11 +66,8 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         return true;
     }
 
-//    public Cursor getAllItems(){
-//        SQLiteDatabase sqLiteDatabase = this.getWritableDatabase();
-//        Cursor result = sqLiteDatabase.rawQuery("SELECT * FROM " + TABLE_NAME, null);
-//        return result;
-//    }
+
+
 
     public ArrayList<ListItem> getAllItems() {
         SQLiteDatabase sqLiteDatabase = this.getReadableDatabase();
@@ -92,5 +90,10 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         sqLiteDatabase.close();
         return list;
 
+    }
+
+    public void deleteItem(ListItem item){
+        SQLiteDatabase sqLiteDatabase = this.getReadableDatabase();
+        sqLiteDatabase.execSQL(" DELETE FROM " + TABLE_NAME + " WHERE " + COL_ID + " = ' " + item.getId() + "'");
     }
 }

@@ -26,7 +26,10 @@
             android:label="@string/title_activity_update" />
         <activity
             android:name=".AddForm"
-            android:label="@string/title_activity_add_form"></activity>
+            android:label="@string/title_activity_add_form" />
+        <activity
+            android:name=".MoreScreen"
+            android:label="@string/title_activity_more_screen"></activity>
     </application>
 
 </manifest>

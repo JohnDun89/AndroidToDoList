@@ -25,6 +25,7 @@
         android:layout_marginEnd="8dp"
         android:layout_marginStart="12dp"
         android:text="More"
+        android:onClick="onMoreButtonClicked"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/to_do_title"
         tools:layout_editor_absoluteY="16dp"

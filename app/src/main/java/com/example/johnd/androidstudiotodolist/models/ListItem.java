@@ -10,7 +10,7 @@ public class ListItem {
     private String name;
     private String description;
     private boolean completed;
-    private Integer priority;
+    private String priority;
 
     public ListItem() {
         this.id = id;
@@ -63,7 +63,6 @@ public class ListItem {
     }
 
     public void setPriority(String numericPriority){
-        Integer result = Integer.valueOf(numericPriority);
-        this.priority = result;
+        this.priority = numericPriority;
     }
 }

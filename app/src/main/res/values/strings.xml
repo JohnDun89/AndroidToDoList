@@ -10,4 +10,7 @@
     <string name="title_activity_page">page</string>
     <string name="Add_To_List">Add To Lsit</string>
     <string name="title_activity_add_form">AddForm</string>
+    <string name="title_activity_more_screen">MoreScreen</string>
+    <string name="delete_button">delete</string>
+    <string name="description">description</string>
 </resources>

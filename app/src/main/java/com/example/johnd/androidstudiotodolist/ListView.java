@@ -6,7 +6,9 @@ import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.TextView;
 
 import com.example.johnd.androidstudiotodolist.models.List;
@@ -52,9 +54,13 @@ public class ListView extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_list_view);
 
-        List list = new List();
+//        List list = new List();
 
-        ArrayList<ListItem> item = list.getList();
+        DatabaseHelper databaseHelper = new DatabaseHelper(ListView.this);
+
+//        ArrayList<ListItem> item = list.getList();
+
+        ArrayList<ListItem> item = databaseHelper.getAllItems();
 
         ListAdapter listAdapter = new ListAdapter(this, item);
 
@@ -70,6 +76,11 @@ public class ListView extends AppCompatActivity {
 
     }
 
+    public void onMoreButtonClicked(View view){
+        Log.d("ListView", "More Button clicked");
+        Intent intent = new Intent(ListView.this, MoreScreen.class);
+        startActivity(intent);
+    }
 
 
 }
