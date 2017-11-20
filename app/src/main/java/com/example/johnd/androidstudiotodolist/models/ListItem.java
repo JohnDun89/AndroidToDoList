@@ -1,10 +1,12 @@
 package com.example.johnd.androidstudiotodolist.models;
 
+import java.io.Serializable;
+
 /**
  * Created by JohnD on 17/11/2017.
  */
 
-public class ListItem {
+public class ListItem implements Serializable {
 
     private Integer id;
     private String name;
@@ -20,7 +22,7 @@ public class ListItem {
         this.priority = priority;
     }
 
-    public Object getTitle() {
+    public String getTitle() {
         return name;
     }
 

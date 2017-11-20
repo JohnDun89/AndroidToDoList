@@ -71,14 +71,14 @@ public class ListView extends AppCompatActivity {
         mTextMessage = (TextView) findViewById(R.id.message);
         BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.navigation);
         navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
-
-
-
     }
 
+
     public void onMoreButtonClicked(View view){
+        ListItem listItem = (ListItem) view.getTag();
         Log.d("ListView", "More Button clicked");
         Intent intent = new Intent(ListView.this, MoreScreen.class);
+        intent.putExtra("ListItem", listItem);
         startActivity(intent);
     }
 

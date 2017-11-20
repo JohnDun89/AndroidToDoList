@@ -1,13 +1,18 @@
 package com.example.johnd.androidstudiotodolist.models;
 
 import android.content.Context;
+import android.content.Intent;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.TextView;
 
 
+import com.example.johnd.androidstudiotodolist.ListView;
+import com.example.johnd.androidstudiotodolist.MoreScreen;
 import com.example.johnd.androidstudiotodolist.R;
 
 import java.util.ArrayList;
@@ -34,7 +39,9 @@ public class ListAdapter extends ArrayAdapter<ListItem> {
         title.setText(currentListItem.getTitle().toString());
 
         listItemView.setTag(currentListItem);
+        Button moreButton = listItemView.findViewById(R.id.more_button);
+        moreButton.setTag(currentListItem);
         return listItemView;
-
     }
+
 }
