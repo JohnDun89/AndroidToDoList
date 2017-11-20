@@ -96,4 +96,25 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         SQLiteDatabase sqLiteDatabase = this.getReadableDatabase();
         sqLiteDatabase.execSQL(" DELETE FROM " + TABLE_NAME + " WHERE " + COL_ID + " = ' " + item.getId() + "'");
     }
+
+//    public void updateCompleted(String item){
+//        SQLiteDatabase sqLiteDatabase = this.getReadableDatabase();
+//        if (item == "false")
+//            sqLiteDatabase.execSQL(" UPDATE " + TABLE_NAME +  " SET " + COL_COMPLETED  + " = '" + true + "' WHERE COL_ID = " + );
+//        else
+//            sqLiteDatabase.execSQL(" UPDATE " + TABLE_NAME + " WHERE " + COL_COMPLETED + " 'false' ");
+//
+//
+//    }
+
+    public void update(ListItem item){
+        SQLiteDatabase sqLiteDatabase = this.getReadableDatabase();
+        ContentValues contentValues = new ContentValues();
+        contentValues.put(COL_TITLE, item.getTitle());
+        contentValues.put(COL_DESCRIPTION, item.getDescription());
+        contentValues.put(COL_COMPLETED, item.getComplete());
+        contentValues.put(COL_PRIORITY, item.getPriority());
+        sqLiteDatabase.update(TABLE_NAME, contentValues, COL_ID + " ?", new String[]{item.getIdString()});
+
+    }
 }

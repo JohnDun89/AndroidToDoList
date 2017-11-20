@@ -12,34 +12,12 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.TextView;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends BaseActivity {
 
     private TextView mTextMessage;
 //    private DatabaseHelper mDBHelper;
 //    private SQLiteDatabase mDataBase;
 
-    private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
-            = new BottomNavigationView.OnNavigationItemSelectedListener() {
-
-        @Override
-        public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-            switch (item.getItemId()) {
-                case R.id.navigation_home:
-                    Intent intent1 = new Intent(MainActivity.this, MainActivity.class);
-                    startActivity(intent1);
-                    return true;
-                case R.id.navigation_ListView:
-                    Intent intent2 = new Intent(MainActivity.this, ListView.class);
-                    startActivity(intent2);
-                    return true;
-                case R.id.navigation_Update:
-                    Intent intent3 = new Intent(MainActivity.this, Update.class);
-                    startActivity(intent3);
-                    return true;
-            }
-            return false;
-        }
-    };
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

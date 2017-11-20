@@ -8,33 +8,10 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.MenuItem;
 import android.widget.TextView;
 
-public class Update extends AppCompatActivity {
+public class Update extends BaseActivity {
 
     private TextView mTextMessage;
 
-    public BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
-            = new BottomNavigationView.OnNavigationItemSelectedListener() {
-
-
-            @Override
-            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-                switch (item.getItemId()) {
-                    case R.id.navigation_home:
-                        Intent intent1 = new Intent(Update.this, MainActivity.class);
-                        startActivity(intent1);
-                        return true;
-                    case R.id.navigation_ListView:
-                        Intent intent2 = new Intent(Update.this, ListView.class);
-                        startActivity(intent2);
-                        return true;
-                    case R.id.navigation_Update:
-                        Intent intent3 = new Intent(Update.this, Update.class);
-                        startActivity(intent3);
-                        return true;
-                }
-                return false;
-            }
-        };
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

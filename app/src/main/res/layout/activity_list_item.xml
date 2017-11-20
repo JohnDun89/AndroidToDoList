@@ -21,16 +21,19 @@
 
     <Button
         android:id="@+id/more_button"
-        android:layout_width="64dp"
-        android:layout_height="66dp"
+        android:layout_width="wrap_content"
+        android:layout_height="75dp"
+        android:layout_marginBottom="8dp"
         android:layout_marginEnd="8dp"
-        android:layout_marginStart="8dp"
+        android:layout_marginStart="288dp"
+        android:layout_marginTop="6dp"
         android:onClick="onMoreButtonClicked"
         android:text="More"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.938"
         app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="16dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.023"
         tools:text="More" />
 
     <Switch
@@ -40,14 +43,20 @@
         android:layout_marginBottom="1dp"
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
+        android:onClick="onSwitch"
         android:layout_marginTop="1dp"
+        android:checked="true"
+        android:splitTrack="false"
         android:switchTextAppearance="@style/TextAppearance.AppCompat.Body2"
         android:text="Switch"
+        android:textOff="Still To Do"
+        android:textOn="Completed"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.067"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/to_do_title"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintVertical_bias="0.0"
+        tools:checked="false" />
 
 </android.support.constraint.ConstraintLayout>

@@ -41,6 +41,11 @@ public class ListAdapter extends ArrayAdapter<ListItem> {
         listItemView.setTag(currentListItem);
         Button moreButton = listItemView.findViewById(R.id.more_button);
         moreButton.setTag(currentListItem);
+
+        View view = listItemView.findViewById(R.id.completed_switch);
+
+        view.setTag(currentListItem);
+
         return listItemView;
     }
 

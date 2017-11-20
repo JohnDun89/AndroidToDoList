@@ -13,33 +13,9 @@ import android.widget.TextView;
 
 import com.example.johnd.androidstudiotodolist.models.ListItem;
 
-public class MoreScreen extends AppCompatActivity {
+public class MoreScreen extends BaseActivity {
 
     private TextView mTextMessage;
-
-
-    private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
-            = new BottomNavigationView.OnNavigationItemSelectedListener() {
-
-        @Override
-        public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-            switch (item.getItemId()) {
-                case R.id.navigation_home:
-                    Intent intent1 = new Intent(MoreScreen.this, MainActivity.class);
-                    startActivity(intent1);
-                    return true;
-                case R.id.navigation_ListView:
-                    Intent intent2 = new Intent(MoreScreen.this, ListView.class);
-                    startActivity(intent2);
-                    return true;
-                case R.id.navigation_Update:
-                    Intent intent3 = new Intent(MoreScreen.this, Update.class);
-                    startActivity(intent3);
-                    return true;
-            }
-            return false;
-        }
-    };
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -60,6 +36,8 @@ public class MoreScreen extends AppCompatActivity {
         ListItem item = (ListItem) intent.getSerializableExtra("ListItem");
         title.setText(item.getTitle());
         description.setText(item.getDescription());
+
+
 
     }
 

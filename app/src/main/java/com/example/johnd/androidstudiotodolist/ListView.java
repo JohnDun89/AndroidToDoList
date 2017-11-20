@@ -17,37 +17,9 @@ import com.example.johnd.androidstudiotodolist.models.ListItem;
 
 import java.util.ArrayList;
 
-public class ListView extends AppCompatActivity {
+public class ListView extends BaseActivity {
 
     private TextView mTextMessage;
-
-
-
-
-    private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
-            = new BottomNavigationView.OnNavigationItemSelectedListener() {
-
-
-            @Override
-            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-                switch (item.getItemId()) {
-                    case R.id.navigation_home:
-                        Intent intent1 = new Intent(ListView.this, MainActivity.class);
-                        startActivity(intent1);
-                        return true;
-                    case R.id.navigation_ListView:
-                        Intent intent2 = new Intent(ListView.this, ListView.class);
-                        startActivity(intent2);
-                        return true;
-                    case R.id.navigation_Update:
-                        Intent intent3 = new Intent(ListView.this, Update.class);
-                        startActivity(intent3);
-                        return true;
-                }
-                return false;
-            }
-        };
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -71,6 +43,16 @@ public class ListView extends AppCompatActivity {
         mTextMessage = (TextView) findViewById(R.id.message);
         BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.navigation);
         navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
+    }
+
+    public void onSwitch(View view) {
+        ListItem listItem = (ListItem) view.getTag();
+        listItem.flipComplete();
+
+        DatabaseHelper db = new DatabaseHelper(this);
+
+        db.update(listItem);
+
     }
 
 

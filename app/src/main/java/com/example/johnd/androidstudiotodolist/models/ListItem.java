@@ -14,19 +14,11 @@ public class ListItem implements Serializable {
     private boolean completed;
     private String priority;
 
-    public ListItem() {
-        this.id = id;
-        this.name = name;
-        this.description = description;
-        this.completed = false;
-        this.priority = priority;
-    }
-
     public String getTitle() {
         return name;
     }
 
-    public void setname(String name){
+    public void setname(String name) {
         this.name = name;
     }
 
@@ -34,37 +26,50 @@ public class ListItem implements Serializable {
         return id;
     }
 
-    public void setID(String number){
-       Integer result = Integer.valueOf(number);
-       this.id = result;
+    public String getIdString(){
+        return id.toString();
+    }
+
+    public void setID(String number) {
+        Integer result = Integer.valueOf(number);
+        this.id = result;
     }
 
     public void setDescription(String description) {
         this.description = description;
     }
 
-    public String getDescription(){
+    public String getDescription() {
         return this.description;
     }
 
-    public boolean getComplete(){
+    public void flipComplete() {
+        this.completed = !this.completed;
+    }
+
+    public boolean getComplete() {
         return this.completed;
     }
 
-    public void complete(){
-        this.completed = true;
-    }
+//    public void complete(){
+//        this.completed = true;
+//    }
+//
+//    public void unComplete(){
+//        this.completed = false;
+//    }
 
-    public void unComplete(){
-        this.completed = false;
-    }
-
-    public void setCompleted(String status){
+    public void setCompleted(String status) {
         Boolean result = Boolean.valueOf(status);
         this.completed = result;
     }
 
-    public void setPriority(String numericPriority){
+    public void setPriority(String numericPriority) {
         this.priority = numericPriority;
+    }
+
+
+    public String getPriority() {
+        return this.priority;
     }
 }
