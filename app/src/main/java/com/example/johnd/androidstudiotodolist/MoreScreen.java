@@ -53,8 +53,11 @@ public class MoreScreen extends AppCompatActivity {
         Intent intent = getIntent();
 
         TextView title = findViewById(R.id.title_view);
+        TextView description = findViewById(R.id.description);
         ListItem item = (ListItem) intent.getSerializableExtra("ListItem");
         title.setText(item.getTitle());
+        description.setText(item.getDescription());
+
     }
 
     public void onDeleteButtonClicked(View view){
