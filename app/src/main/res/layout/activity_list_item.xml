@@ -24,22 +24,17 @@
 
     <Button
         android:id="@+id/more_button"
-        android:layout_width="wrap_content"
-        android:layout_height="75dp"
-        android:layout_marginBottom="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginStart="288dp"
-        android:layout_marginTop="6dp"
+        style="@android:style/Widget.Button.Inset"
+        android:layout_width="70dp"
+        android:layout_height="59dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginTop="24dp"
+        android:background="@drawable/ic_control_point_black_24dp"
+        android:backgroundTint="@android:color/background_light"
         android:color="@color/colorPrimary"
         android:onClick="onMoreButtonClicked"
-        android:text="More"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.023"
-        tools:text="More" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <Switch
         android:id="@+id/completed_switch"
@@ -55,7 +50,7 @@
         android:shadowColor="@color/colorPrimaryDark"
         android:splitTrack="false"
         android:switchTextAppearance="@style/TextAppearance.AppCompat.Body2"
-        android:text="Switch"
+        android:text="Completed"
         android:textColorHighlight="@color/colorPrimaryDark"
         android:textColorHint="@color/colorPrimaryDark"
         android:textColorLink="@color/colorPrimaryDark"

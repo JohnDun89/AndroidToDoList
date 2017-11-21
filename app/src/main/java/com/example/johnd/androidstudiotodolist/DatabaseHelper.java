@@ -136,4 +136,6 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 //            sqLiteDatabase.execSQL(query);
             sqLiteDatabase.close();
         }
+
+
 }

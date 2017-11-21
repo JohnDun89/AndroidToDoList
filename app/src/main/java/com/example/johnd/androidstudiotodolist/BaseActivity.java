@@ -25,12 +25,12 @@ public class BaseActivity extends AppCompatActivity {
                     finish();
                     return true;
                 case R.id.navigation_ListView:
-                    Intent intent2 = new Intent(BaseActivity.this, ListView.class);
+                    Intent intent2 = new Intent(BaseActivity.this, ListViewActivity.class);
                     startActivity(intent2);
                     finish();
                     return true;
                 case R.id.navigation_Update:
-                    Intent intent3 = new Intent(BaseActivity.this, Update.class);
+                    Intent intent3 = new Intent(BaseActivity.this, SettingActivity.class);
                     startActivity(intent3);
                     finish();
                     return true;

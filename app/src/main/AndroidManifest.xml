@@ -19,16 +19,16 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".ListView"
+            android:name=".ListViewActivity"
             android:label="@string/title_activity_list_view" />
         <activity
-            android:name=".Update"
+            android:name=".SettingActivity"
             android:label="@string/title_activity_update" />
         <activity
             android:name=".AddForm"
             android:label="@string/title_activity_add_form" />
         <activity
-            android:name=".MoreScreen"
+            android:name=".MoreScreenActivity"
             android:label="@string/title_activity_more_screen"></activity>
     </application>
 

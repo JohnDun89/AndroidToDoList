@@ -1,23 +1,18 @@
 package com.example.johnd.androidstudiotodolist;
 
-import android.app.ListActivity;
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
-import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
-import android.view.MenuItem;
 import android.view.View;
 import android.widget.TextView;
 
-import com.example.johnd.androidstudiotodolist.models.List;
 import com.example.johnd.androidstudiotodolist.models.ListAdapter;
 import com.example.johnd.androidstudiotodolist.models.ListItem;
 
 import java.util.ArrayList;
 
-public class ListView extends BaseActivity {
+public class ListViewActivity extends BaseActivity {
 
     private TextView mTextMessage;
 
@@ -28,7 +23,7 @@ public class ListView extends BaseActivity {
 
 //        List list = new List();
 
-        DatabaseHelper databaseHelper = new DatabaseHelper(ListView.this);
+        DatabaseHelper databaseHelper = new DatabaseHelper(ListViewActivity.this);
 
 //        ArrayList<ListItem> item = list.getList();
 
@@ -57,8 +52,8 @@ public class ListView extends BaseActivity {
 
     public void onMoreButtonClicked(View view){
         ListItem listItem = (ListItem) view.getTag();
-        Log.d("ListView", "More Button clicked");
-        Intent intent = new Intent(ListView.this, MoreScreen.class);
+        Log.d("ListViewActivity", "More Button clicked");
+        Intent intent = new Intent(ListViewActivity.this, MoreScreenActivity.class);
         intent.putExtra("ListItem", listItem);
         startActivity(intent);
     }

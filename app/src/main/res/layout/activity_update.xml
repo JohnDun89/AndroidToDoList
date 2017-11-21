@@ -5,7 +5,7 @@
     android:id="@+id/container"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.johnd.androidstudiotodolist.Update">
+    tools:context="com.example.johnd.androidstudiotodolist.SettingActivity">
 
     <TextView
         android:id="@+id/message"
@@ -31,20 +31,17 @@
         app:menu="@menu/navigation" />
 
     <TextView
-        android:id="@+id/textView"
-        android:layout_width="177dp"
-        android:layout_height="76dp"
+        android:id="@+id/percentage"
+        android:layout_width="153dp"
+        android:layout_height="78dp"
         android:layout_marginBottom="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
-        android:text="@string/title_activity_update"
-        android:textAlignment="center"
-        android:textSize="24sp"
+        android:text="TextView"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:text="update settings" />
+        app:layout_constraintTop_toTopOf="parent" />
 
 </android.support.constraint.ConstraintLayout>
