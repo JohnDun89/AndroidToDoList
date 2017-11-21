@@ -59,4 +59,17 @@ public class AddForm extends BaseActivity {
         );
     }
 
+
+    public void nameClicked(View view){
+        if (view == editTitle) {
+            editTitle.setText("");
+        }
+    }
+
+    public void priorityClicked(View view){
+        if (view == editPriority){
+            editPriority.setText("");
+        }
+    }
+
 }
