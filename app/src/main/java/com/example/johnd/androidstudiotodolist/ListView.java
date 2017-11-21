@@ -52,7 +52,6 @@ public class ListView extends BaseActivity {
         DatabaseHelper db = new DatabaseHelper(this);
 
         db.update(listItem);
-
     }
 
 

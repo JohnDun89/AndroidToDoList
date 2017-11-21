@@ -8,6 +8,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.CheckBox;
+import android.widget.Switch;
 import android.widget.TextView;
 
 
@@ -38,11 +40,15 @@ public class ListAdapter extends ArrayAdapter<ListItem> {
         TextView title = listItemView.findViewById(R.id.to_do_title);
         title.setText(currentListItem.getTitle().toString());
 
+
+
         listItemView.setTag(currentListItem);
         Button moreButton = listItemView.findViewById(R.id.more_button);
         moreButton.setTag(currentListItem);
 
-        View view = listItemView.findViewById(R.id.completed_switch);
+        Switch view = (Switch) listItemView.findViewById(R.id.completed_switch);
+        view.setChecked(currentListItem.getComplete());
+
 
         view.setTag(currentListItem);
 

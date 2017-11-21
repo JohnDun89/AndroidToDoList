@@ -59,9 +59,8 @@ public class ListItem implements Serializable {
 //        this.completed = false;
 //    }
 
-    public void setCompleted(String status) {
-        Boolean result = Boolean.valueOf(status);
-        this.completed = result;
+    public void setCompleted(int status) {
+        this.completed = status == 1;
     }
 
     public void setPriority(String numericPriority) {
