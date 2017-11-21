@@ -1,6 +1,7 @@
 package com.example.johnd.androidstudiotodolist;
 
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.support.design.widget.BottomNavigationView;
 import android.util.Log;
@@ -41,12 +42,21 @@ public class ListViewActivity extends BaseActivity {
     }
 
     public void onSwitch(View view) {
+
         ListItem listItem = (ListItem) view.getTag();
+
+        if (listItem.getComplete() == false){
+            view.setBackgroundColor(Color.RED);
+        }
         listItem.flipComplete();
 
         DatabaseHelper db = new DatabaseHelper(this);
 
         db.update(listItem);
+
+        Intent intent = getIntent();
+        finish();
+        startActivity(intent);
     }
 
 
