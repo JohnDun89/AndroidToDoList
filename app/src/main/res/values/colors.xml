@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#558188</color>
-    <color name="colorPrimaryDark">#253939</color>
-    <color name="colorAccent">#FF9C5F</color>
-    <color name="lighter_blue">#5FA292</color>
-    <color name="light">#ff8b6c</color>
-    <color name="background_material_light">#FF9C5F</color>
+    <color name="colorPrimary">#1d2d53</color>
+    <color name="colorPrimaryDark">#071128</color>
+    <color name="colorAccent">#f5dd6c</color>
+    <!--<color name="lighter_blue">#5FA292</color>-->
+    <!--<color name="light">#ff8b6c</color>-->
+    <color name="white">#FFF</color>
+    <color name="background_material_light">#030b1d</color>
 </resources>

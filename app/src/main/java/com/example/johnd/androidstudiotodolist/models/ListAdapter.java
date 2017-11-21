@@ -38,7 +38,7 @@ public class ListAdapter extends ArrayAdapter<ListItem> {
         ListItem currentListItem = getItem(position);
 
         if (currentListItem.getComplete() == false){
-            listItemView.setBackgroundColor(Color.RED);
+            listItemView.setBackgroundColor(Color.parseColor("#f5dd6c"));
         }
 
         TextView title = listItemView.findViewById(R.id.to_do_title);
