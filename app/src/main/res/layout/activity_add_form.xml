@@ -64,15 +64,16 @@
         android:id="@+id/edit_priority"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="56dp"
+        android:layout_marginBottom="88dp"
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
-        android:ems="10"
         android:backgroundTint="@color/colorAccent"
-        android:textColor="@color/white"
+        android:ems="10"
         android:inputType="textPersonName"
+        android:textColor="@color/white"
         app:layout_constraintBottom_toTopOf="@+id/submit_button"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.503"
         app:layout_constraintStart_toStartOf="parent" />
 
     <Button
@@ -82,16 +83,22 @@
         android:layout_marginBottom="52dp"
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
-        android:background="@color/colorAccent"
+        android:background="@color/colorPrimary"
         android:elevation="0dp"
+        android:gravity="center"
         android:text="Submit"
         android:textAlignment="center"
         android:textAllCaps="false"
-        android:textColor="@color/colorPrimary"
         android:textSize="20sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/navigation"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
+
+    <RadioGroup
+        android:layout_width="250dp"
+        android:layout_height="37dp"
+        tools:layout_editor_absoluteX="68dp"
+        tools:layout_editor_absoluteY="288dp" />
 
 </android.support.constraint.ConstraintLayout>
