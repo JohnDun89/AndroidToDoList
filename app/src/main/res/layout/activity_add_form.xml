@@ -5,7 +5,10 @@
     android:id="@+id/container"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/colorPrimaryDark"
+
     tools:context="com.example.johnd.androidstudiotodolist.AddForm">
+
 
     <android.support.design.widget.BottomNavigationView
         android:id="@+id/navigation"
@@ -31,13 +34,13 @@
         android:ems="10"
         android:inputType="textPersonName"
         android:onClick="nameClicked"
-        android:text="Name"
+        android:text="title "
         android:textColor="@color/white"
         app:layout_constraintBottom_toTopOf="@+id/edit_description"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        tools:text="Name" />
+        tools:text="title" />
 
     <EditText
         android:id="@+id/edit_description"
@@ -50,12 +53,12 @@
         android:ems="10"
         android:inputType="textPersonName"
         android:onClick="descriptionClicked"
-        android:text="Description"
+        android:text="@string/description"
         android:textColor="@color/white"
         app:layout_constraintBottom_toTopOf="@+id/edit_priority"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        tools:text="Description" />
+        tools:text="@string/description" />
 
     <EditText
         android:id="@+id/edit_priority"

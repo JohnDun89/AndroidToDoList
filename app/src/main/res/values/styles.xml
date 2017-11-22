@@ -12,7 +12,7 @@
         <item name="android:buttonStyle">@color/white</item>
 
 
-        <item name="android:colorBackground">@color/background_material_light</item>
+        <item name="android:colorBackground">@color/colorPrimaryDark</item>
     </style>
 
     <!--<item name="red">@colour/switchRed</item>-->

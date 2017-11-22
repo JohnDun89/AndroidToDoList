@@ -46,7 +46,7 @@ public class ListViewActivity extends BaseActivity {
         ListItem listItem = (ListItem) view.getTag();
 
         if (listItem.getComplete() == false){
-            view.setBackgroundColor(Color.parseColor("#f5dd6c"));
+            view.setBackgroundColor(Color.parseColor("#de9b0d"));
         }
         listItem.flipComplete();
 
