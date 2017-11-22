@@ -1,5 +1,7 @@
 package com.example.johnd.androidstudiotodolist.models;
 
+import android.widget.ListView;
+
 import java.io.Serializable;
 
 /**
@@ -13,6 +15,7 @@ public class ListItem implements Serializable {
     private String description;
     private boolean completed;
     private String priority;
+
 
     public String getTitle() {
         return name;

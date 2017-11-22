@@ -15,6 +15,8 @@ import java.util.ArrayList;
 
 public class ListViewActivity extends BaseActivity {
 
+
+
     private TextView mTextMessage;
 
     @Override

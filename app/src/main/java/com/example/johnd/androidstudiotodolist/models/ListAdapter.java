@@ -26,6 +26,7 @@ public class ListAdapter extends ArrayAdapter<ListItem> {
         super(context, 0 ,listItem);
     }
 
+
     @SuppressLint("ResourceType")
     @Override
     public View getView(int position, View listItemView, ViewGroup parent) {
