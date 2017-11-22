@@ -12,6 +12,8 @@ import com.example.johnd.androidstudiotodolist.models.ListItem;
 
 import java.util.ArrayList;
 
+import az.plainpie.PieView;
+
 public class SettingActivity extends BaseActivity {
 
     private TextView mTextMessage;
@@ -38,6 +40,11 @@ public class SettingActivity extends BaseActivity {
         mTextMessage = (TextView) findViewById(R.id.message);
         BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.navigation);
         navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
+
+
+        PieView pieView = (PieView) findViewById(R.id.pieView);
+        pieView.setPercentageBackgroundColor(getResources().getColor(R.color.colorPrimary));
+        pieView.setInnerText("Completed");
     }
 
 
