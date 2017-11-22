@@ -1,5 +1,6 @@
 package com.example.johnd.androidstudiotodolist.models;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.graphics.Color;
 import android.view.LayoutInflater;
@@ -25,6 +26,7 @@ public class ListAdapter extends ArrayAdapter<ListItem> {
         super(context, 0 ,listItem);
     }
 
+    @SuppressLint("ResourceType")
     @Override
     public View getView(int position, View listItemView, ViewGroup parent) {
       if (listItemView == null) {
@@ -38,7 +40,9 @@ public class ListAdapter extends ArrayAdapter<ListItem> {
         ListItem currentListItem = getItem(position);
 
         if (currentListItem.getComplete() == false){
-            listItemView.setBackgroundColor(Color.parseColor("#f5dd6c"));
+            listItemView.setBackgroundColor(Color.parseColor("#232e40"));
+        } else {
+            listItemView.setBackgroundColor(Color.parseColor("#de9b0d"));
         }
 
         TextView title = listItemView.findViewById(R.id.to_do_title);

@@ -47,6 +47,7 @@ public class SettingActivity extends BaseActivity {
 
         pieView.setPercentageBackgroundColor(getResources().getColor(R.color.colorPrimary));
         pieView.setInnerText(stringStat + "%");
+        pieView.setPercentage(statistics);
 
         PieView animatedPie = (PieView) findViewById(R.id.pieView);
 

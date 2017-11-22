@@ -24,7 +24,7 @@ public class ListViewActivity extends BaseActivity {
 
 //        List list = new List();
 
-        DatabaseHelper databaseHelper = new DatabaseHelper(ListViewActivity.this);
+        DatabaseHelper databaseHelper = new DatabaseHelper(this);
 
 //        ArrayList<ListItem> item = list.getList();
 
@@ -45,18 +45,28 @@ public class ListViewActivity extends BaseActivity {
 
         ListItem listItem = (ListItem) view.getTag();
 
-        if (listItem.getComplete() == false){
-            view.setBackgroundColor(Color.parseColor("#de9b0d"));
-        }
+//        if (listItem.getComplete() == true){
+//        }
+
         listItem.flipComplete();
 
         DatabaseHelper db = new DatabaseHelper(this);
 
         db.update(listItem);
 
-        Intent intent = getIntent();
-        finish();
-        startActivity(intent);
+        DatabaseHelper databaseHelper = new DatabaseHelper(this);
+
+        ArrayList<ListItem> item = databaseHelper.getAllItems();
+
+        ListAdapter listAdapter = new ListAdapter(this, item);
+
+        android.widget.ListView listView = findViewById(R.id.list);
+
+        listView.setAdapter(listAdapter);
+//        Intent intent = getIntent();
+//        finish();
+//        startActivity(intent);
+
     }
 
 
