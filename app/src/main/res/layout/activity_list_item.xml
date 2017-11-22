@@ -51,6 +51,7 @@
         android:splitTrack="false"
         android:switchTextAppearance="@style/TextAppearance.AppCompat.Body2"
         android:text="Completed"
+        android:textColor="@color/white"
         android:textColorHighlight="@color/colorPrimaryDark"
         android:textColorHint="@color/colorPrimaryDark"
         android:textColorLink="@color/colorPrimaryDark"

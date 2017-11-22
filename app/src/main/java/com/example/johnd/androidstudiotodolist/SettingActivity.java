@@ -1,6 +1,8 @@
 package com.example.johnd.androidstudiotodolist;
 
 import android.content.Intent;
+import android.content.res.ColorStateList;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
@@ -19,11 +21,12 @@ public class SettingActivity extends BaseActivity {
 
     private TextView mTextMessage;
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_update);
+
+
 
         DatabaseHelper databaseHelper = new DatabaseHelper(SettingActivity.this);
         ArrayList<ListItem> itemsArray = databaseHelper.getAllItems();
@@ -56,6 +59,8 @@ public class SettingActivity extends BaseActivity {
         animatedPie.startAnimation(animation);
 
         pieView.setPercentageBackgroundColor(getResources().getColor(R.color.colorAccent));
+
+
 
     }
 

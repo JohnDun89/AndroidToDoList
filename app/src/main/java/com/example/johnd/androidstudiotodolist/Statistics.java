@@ -1,5 +1,7 @@
 package com.example.johnd.androidstudiotodolist;
 
+import android.content.res.ColorStateList;
+import android.graphics.Color;
 import android.support.v7.app.AppCompatActivity;
 
 import com.example.johnd.androidstudiotodolist.models.ListItem;

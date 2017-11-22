@@ -2,7 +2,9 @@ package com.example.johnd.androidstudiotodolist;
 
 import android.app.ListActivity;
 import android.content.Intent;
+import android.content.res.ColorStateList;
 import android.database.sqlite.SQLiteDatabase;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
@@ -18,6 +20,7 @@ public class MainActivity extends BaseActivity {
 //    private DatabaseHelper mDBHelper;
 //    private SQLiteDatabase mDataBase;
 
+    BottomNavigationView bottomNavigationView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,6 +41,8 @@ public class MainActivity extends BaseActivity {
         Log.d("MainActivity", "Add Button clicked");
         Intent intent = new Intent(this, AddForm.class);
         startActivity(intent);
+        bottomNavigationView.setItemIconTintList(ColorStateList.valueOf(Color.WHITE));
+
 
     }
 

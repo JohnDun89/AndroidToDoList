@@ -5,8 +5,12 @@ import android.graphics.Color;
 import android.os.Bundle;
 import android.support.design.widget.BottomNavigationView;
 import android.util.Log;
+import android.view.MotionEvent;
 import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ListView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.johnd.androidstudiotodolist.models.ListAdapter;
 import com.example.johnd.androidstudiotodolist.models.ListItem;
@@ -23,6 +27,8 @@ public class ListViewActivity extends BaseActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_list_view);
+
+       final SwipeDetector swipeDetector = new SwipeDetector();
 
 //        List list = new List();
 
@@ -41,14 +47,49 @@ public class ListViewActivity extends BaseActivity {
         mTextMessage = (TextView) findViewById(R.id.message);
         BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.navigation);
         navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
+
+        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                if (swipeDetector.swipeDetected()){
+                    if (swipeDetector.getAction() == SwipeDetector.Action.RL){
+
+                        ListItem listItem = (ListItem) view.getTag();
+
+                        listItem.flipComplete();
+
+                        DatabaseHelper db = new DatabaseHelper(ListViewActivity.this);
+
+                        db.update(listItem);
+                    }
+                }
+            }
+        });
+
+
+
     }
 
-    public void onSwitch(View view) {
+
+
+//        public void onSwipe(View view){
+//        SwipeDetector swipeDetector = new SwipeDetector();
+//
+//
+//        ListItem listItem = (ListItem) view.getTag();
+//        listItem.flipComplete();
+//
+//        DatabaseHelper db = new DatabaseHelper(this);
+//
+//        }
+
+
+
+
+
+        public void onSwitch(View view) {
 
         ListItem listItem = (ListItem) view.getTag();
-
-//        if (listItem.getComplete() == true){
-//        }
 
         listItem.flipComplete();
 
@@ -70,6 +111,8 @@ public class ListViewActivity extends BaseActivity {
 //        startActivity(intent);
 
     }
+
+
 
 
     public void onMoreButtonClicked(View view){
