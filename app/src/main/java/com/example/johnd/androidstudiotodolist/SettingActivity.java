@@ -13,6 +13,7 @@ import com.example.johnd.androidstudiotodolist.models.ListItem;
 import java.util.ArrayList;
 
 import az.plainpie.PieView;
+import az.plainpie.animation.PieAngleAnimation;
 
 public class SettingActivity extends BaseActivity {
 
@@ -43,8 +44,18 @@ public class SettingActivity extends BaseActivity {
 
 
         PieView pieView = (PieView) findViewById(R.id.pieView);
+
         pieView.setPercentageBackgroundColor(getResources().getColor(R.color.colorPrimary));
         pieView.setInnerText(stringStat + "%");
+
+        PieView animatedPie = (PieView) findViewById(R.id.pieView);
+
+        PieAngleAnimation animation = new PieAngleAnimation(animatedPie);
+        animation.setDuration(2000); //This is the duration of the animation in millis
+        animatedPie.startAnimation(animation);
+
+        pieView.setPercentageBackgroundColor(getResources().getColor(R.color.colorAccent));
+
     }
 
 
