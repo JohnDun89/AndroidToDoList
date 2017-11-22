@@ -35,8 +35,8 @@
         app:layout_constraintVertical_bias="0.365"
         plainpie:inner_pie_padding="30"
         plainpie:inner_text_visibility="true"
-        plainpie:percentage="75"
-        plainpie:percentage_size="70" />
+        plainpie:percentage="20"
+        plainpie:percentage_size="20" />
 
     <TextView
         android:id="@+id/textView"

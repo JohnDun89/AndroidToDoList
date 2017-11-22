@@ -30,8 +30,8 @@ public class SettingActivity extends BaseActivity {
 
         Integer statistics = stats.getPercentage(itemsArray);
         String stringStat = statistics.toString();
-        TextView title = (TextView)findViewById(R.id.percentage);
-        title.setText(stringStat);
+//        TextView title = (TextView)findViewById(R.id.pieView);
+//        title.setText(stringStat);
 
 //        ArrayList<ListItem> item = list.getList();
 
@@ -44,7 +44,7 @@ public class SettingActivity extends BaseActivity {
 
         PieView pieView = (PieView) findViewById(R.id.pieView);
         pieView.setPercentageBackgroundColor(getResources().getColor(R.color.colorPrimary));
-        pieView.setInnerText("Completed");
+        pieView.setInnerText(stringStat + "%");
     }
 
 
