@@ -5,8 +5,7 @@
     android:id="@+id/container"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.johnd.androidstudiotodolist.ListViewActivity"
-    >
+    tools:context="com.example.johnd.androidstudiotodolist.ListViewActivity">
 
     <android.support.design.widget.BottomNavigationView
         android:id="@+id/navigation"
@@ -14,9 +13,9 @@
         android:layout_height="wrap_content"
         android:layout_marginEnd="0dp"
         android:layout_marginStart="0dp"
-        android:backgroundTint="@color/white"
-
         android:background="?android:attr/windowBackground"
+
+        android:backgroundTint="@color/white"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
@@ -25,41 +24,45 @@
     <ListView
         android:id="@+id/list"
         android:layout_width="368dp"
-        android:layout_height="439dp"
+        android:layout_height="445dp"
 
-        tools:layout_editor_absoluteX="8dp"
-        tools:layout_editor_absoluteY="8dp" />
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="horizontal"
-        android:visibility="gone"
-        android:weightSum="3"
         android:height="@dimen/list_item_height"
+        android:orientation="horizontal"
         android:paddingLeft="@dimen/list_item_padding_sides"
-        android:paddingRight="@dimen/list_item_padding_sides">
+        android:paddingRight="@dimen/list_item_padding_sides"
+        android:visibility="gone"
+        android:weightSum="3">
 
         <TextView
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
             android:id="@+id/txt_delete"
-            android:gravity="center_vertical"
-            android:text="@string/update"
-            android:clickable="false"
-            android:layout_weight="2"
-            android:hapticFeedbackEnabled="true"
-            android:textColor="@android:color/white"/>
-
-        <TextView
             android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:gravity="center"
-            android:id="@+id/txt_undo"
-            android:text="@string/undo"
+            android:layout_weight="2"
             android:clickable="false"
+            android:gravity="center_vertical"
+            android:hapticFeedbackEnabled="true"
+            android:text="@string/update"
+            android:textColor="@android:color/white" />
+
+        <TextView
+            android:id="@+id/txt_undo"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
             android:layout_weight="1"
-            android:textColor="@color/white"/>
+            android:clickable="false"
+            android:gravity="center"
+            android:text="@string/undo"
+            android:textColor="@color/white" />
 
     </LinearLayout>
 

@@ -59,9 +59,9 @@ public class ListViewActivity extends BaseActivity  {
                             }
 
 //                            @Override
-//                            public void onPendingDismiss(com.hudomju.swipe.adapter.ListViewAdapter recyclerView, int position) {
-//
-//                            }
+                            public void onPendingDismiss(com.hudomju.swipe.adapter.ListViewAdapter recyclerView, int position) {
+
+                            }
 
                             @Override
                             public void onDismiss(com.hudomju.swipe.adapter.ListViewAdapter view, int position) {
@@ -80,9 +80,15 @@ public class ListViewActivity extends BaseActivity  {
                                 listView.setAdapter(listViewAdapter);
 
                             }
+
+//                            @Override
+//                            public void setDismissDelay(long dismissDelayMillis) {
+//                                this.m = dismissDelayMillis;
+//                            }
+
                         });
 // Dismiss the item automatically after 3 seconds
-//        touchListener.setDismissDelay(3000);
+       touchListener.processPendingDismisses();
 
         listView.setOnTouchListener(touchListener);
         listView.setOnScrollListener((AbsListView.OnScrollListener) touchListener.makeScrollListener());

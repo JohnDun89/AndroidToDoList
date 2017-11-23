@@ -14,7 +14,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
-public class AddForm extends AppCompatActivity {
+public class AddForm extends BaseActivity {
 
 
     private TextView mTextMessage;
@@ -42,8 +42,9 @@ public class AddForm extends AppCompatActivity {
         submit_button = (Button)findViewById(R.id.submit_button);
         addData();
 
-//        mTextMessage = (TextView) findViewById(R.id.message);
-//        BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.navigation);
+        mTextMessage = (TextView) findViewById(R.id.message);
+        BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.navigation);
+        navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
 //
 
     }
