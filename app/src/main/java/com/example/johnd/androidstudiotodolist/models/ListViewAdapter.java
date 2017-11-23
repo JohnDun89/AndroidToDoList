@@ -20,9 +20,9 @@ import java.util.ArrayList;
  * Created by JohnD on 18/11/2017.
  */
 
-public class ListAdapter extends ArrayAdapter<ListItem> {
+public class ListViewAdapter extends ArrayAdapter<ListItem> {
 
-    public ListAdapter(Context context, ArrayList<ListItem> listItem) {
+    public ListViewAdapter(Context context, ArrayList<ListItem> listItem) {
         super(context, 0 ,listItem);
     }
 

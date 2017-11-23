@@ -20,6 +20,8 @@ android {
 }
 
 dependencies {
+
+    compile 'com.hudomju:swipe-to-dismiss-undo:1.0'
     compile 'com.github.zurche:plain-pie:v0.2.2'
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     implementation 'com.android.support:appcompat-v7:26.1.0'

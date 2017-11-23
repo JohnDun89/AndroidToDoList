@@ -1,26 +1,32 @@
 package com.example.johnd.androidstudiotodolist;
 
+import android.app.ListActivity;
 import android.content.Intent;
-import android.graphics.Color;
 import android.os.Bundle;
 import android.support.design.widget.BottomNavigationView;
 import android.util.Log;
-import android.view.GestureDetector;
-import android.view.MotionEvent;
 import android.view.View;
+import android.widget.AbsListView;
 import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.example.johnd.androidstudiotodolist.models.ListAdapter;
+import com.example.johnd.androidstudiotodolist.models.ListViewAdapter;
 import com.example.johnd.androidstudiotodolist.models.ListItem;
+import com.hudomju.swipe.SwipeToDismissTouchListener;
 
 import java.util.ArrayList;
 
-public class ListViewActivity extends BaseActivity implements GestureDetector.OnGestureListener {
+import static android.widget.Toast.LENGTH_SHORT;
+
+public class ListViewActivity extends BaseActivity  {
 
 
+    private ListView listView;
+    private ArrayList LIST;
+    private ListViewAdapter adapter;
+    ArrayList<ListItem> item;
 
     private TextView mTextMessage;
 
@@ -33,21 +39,72 @@ public class ListViewActivity extends BaseActivity implements GestureDetector.On
 
 //        List list = new List();
 
-        DatabaseHelper databaseHelper = new DatabaseHelper(this);
+        final DatabaseHelper databaseHelper = new DatabaseHelper(this);
 
 //        ArrayList<ListItem> item = list.getList();
 
-        ArrayList<ListItem> item = databaseHelper.getAllItems();
+        item = databaseHelper.getAllItems();
+        final ListViewAdapter listViewAdapter = new ListViewAdapter(this, item);
+        final android.widget.ListView listView = findViewById(R.id.list);
+        listView.setAdapter(listViewAdapter);
 
-        ListAdapter listAdapter = new ListAdapter(this, item);
 
-        android.widget.ListView listView = findViewById(R.id.list);
+        final SwipeToDismissTouchListener<com.hudomju.swipe.adapter.ListViewAdapter> touchListener =
+                new SwipeToDismissTouchListener<>(
+                        new com.hudomju.swipe.adapter.ListViewAdapter(listView),
+                        new SwipeToDismissTouchListener.DismissCallbacks<com.hudomju.swipe.adapter.ListViewAdapter>() {
+                            @Override
+                            public boolean canDismiss(int position) {
+                                return true;
+                            }
 
-        listView.setAdapter(listAdapter);
+//                            @Override
+//                            public void onPendingDismiss(com.hudomju.swipe.adapter.ListViewAdapter recyclerView, int position) {
+//
+//                            }
 
+                            @Override
+                            public void onDismiss(com.hudomju.swipe.adapter.ListViewAdapter view, int position) {
+                                Log.d("SWIPING", String.valueOf(position));
+                                ListItem listItem = item.get(position);
+                                listItem.flipComplete();
+                                databaseHelper.update(listItem);
+
+//                                DatabaseHelper databaseHelper = new DatabaseHelper(this);
+
+//                                ArrayList<ListItem> item = databaseHelper.getAllItems();
+
+//                                ListViewAdapter listViewAdapter = new ListViewAdapter(this, item);
+
+                                android.widget.ListView listView = findViewById(R.id.list);
+                                listView.setAdapter(listViewAdapter);
+
+                            }
+                        });
+// Dismiss the item automatically after 3 seconds
+//        touchListener.setDismissDelay(3000);
+
+        listView.setOnTouchListener(touchListener);
+        listView.setOnScrollListener((AbsListView.OnScrollListener) touchListener.makeScrollListener());
+        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                if (touchListener.existPendingDismisses()) {
+                    touchListener.undoPendingDismiss();
+                } else {
+                    Toast.makeText(ListViewActivity.this, "Position " + position, LENGTH_SHORT).show();
+                }
+            }
+        });
         mTextMessage = (TextView) findViewById(R.id.message);
         BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.navigation);
         navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
+    }
+
+
+//            mTextMessage = (TextView) findViewById(R.id.message);
+//        BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.navigation);
+//        navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
 
 //        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
 //            @Override
@@ -69,22 +126,21 @@ public class ListViewActivity extends BaseActivity implements GestureDetector.On
 
 
 
-    }
 
 
 
-        public void onSwipe(View view){
-
-
-//        SwipeDetector swipeDetector = new SwipeDetector();
-
-
-        ListItem listItem = (ListItem) view.getTag();
-        listItem.flipComplete();
-
-        DatabaseHelper db = new DatabaseHelper(this);
-
-        }
+//        public void onSwipe(View view){
+//
+//
+////        SwipeDetector swipeDetector = new SwipeDetector();
+//
+//
+//        ListItem listItem = (ListItem) view.getTag();
+//        listItem.flipComplete();
+//
+//        DatabaseHelper db = new DatabaseHelper(this);
+//
+//        }
 
 
 
@@ -104,11 +160,11 @@ public class ListViewActivity extends BaseActivity implements GestureDetector.On
 
         ArrayList<ListItem> item = databaseHelper.getAllItems();
 
-        ListAdapter listAdapter = new ListAdapter(this, item);
+        ListViewAdapter listViewAdapter = new ListViewAdapter(this, item);
 
         android.widget.ListView listView = findViewById(R.id.list);
 
-        listView.setAdapter(listAdapter);
+        listView.setAdapter(listViewAdapter);
 //        Intent intent = getIntent();
 //        finish();
 //        startActivity(intent);
@@ -127,34 +183,6 @@ public class ListViewActivity extends BaseActivity implements GestureDetector.On
     }
 
 
-    @Override
-    public boolean onDown(MotionEvent motionEvent) {
-        return false;
-    }
 
-    @Override
-    public void onShowPress(MotionEvent motionEvent) {
-
-    }
-
-    @Override
-    public boolean onSingleTapUp(MotionEvent motionEvent) {
-        return false;
-    }
-
-    @Override
-    public boolean onScroll(MotionEvent motionEvent, MotionEvent motionEvent1, float v, float v1) {
-        return false;
-    }
-
-    @Override
-    public void onLongPress(MotionEvent motionEvent) {
-
-    }
-
-    @Override
-    public boolean onFling(MotionEvent motionEvent, MotionEvent motionEvent1, float v, float v1) {
-        return false;
-    }
 }
 
