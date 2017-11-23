@@ -20,7 +20,7 @@ public class AddForm extends AppCompatActivity {
     private TextView mTextMessage;
     private DatabaseHelper mDBHelper;
     private SQLiteDatabase mDataBase;
-    EditText editTitle, editDescription, editPriority;
+    EditText editTitle, editDescription;
     Button submit_button;
 
 

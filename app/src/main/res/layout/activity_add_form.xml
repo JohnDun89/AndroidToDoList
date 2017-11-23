@@ -32,14 +32,14 @@
         android:layout_marginTop="8dp"
         android:backgroundTint="@color/colorAccent"
         android:ems="10"
+        android:hint="title"
         android:inputType="textPersonName"
-        android:text="title "
         android:textColor="@color/white"
+        android:textColorHint="@color/textIcons"
         app:layout_constraintBottom_toTopOf="@+id/edit_description"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:text="title" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
         android:id="@+id/edit_description"
@@ -50,13 +50,13 @@
         android:layout_marginStart="8dp"
         android:backgroundTint="@color/colorAccent"
         android:ems="10"
+        android:hint="@string/description"
         android:inputType="textPersonName"
-        android:text="@string/description"
         android:textColor="@color/white"
+        android:textColorHint="@color/percentageTextColor"
         app:layout_constraintBottom_toTopOf="@+id/submit_button"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        tools:text="@string/description" />
+        app:layout_constraintStart_toStartOf="parent" />
 
     <Button
         android:id="@+id/submit_button"

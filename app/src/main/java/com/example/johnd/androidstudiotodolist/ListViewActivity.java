@@ -5,6 +5,7 @@ import android.graphics.Color;
 import android.os.Bundle;
 import android.support.design.widget.BottomNavigationView;
 import android.util.Log;
+import android.view.GestureDetector;
 import android.view.MotionEvent;
 import android.view.View;
 import android.widget.AdapterView;
@@ -17,7 +18,7 @@ import com.example.johnd.androidstudiotodolist.models.ListItem;
 
 import java.util.ArrayList;
 
-public class ListViewActivity extends BaseActivity {
+public class ListViewActivity extends BaseActivity implements GestureDetector.OnGestureListener {
 
 
 
@@ -126,6 +127,34 @@ public class ListViewActivity extends BaseActivity {
     }
 
 
+    @Override
+    public boolean onDown(MotionEvent motionEvent) {
+        return false;
+    }
 
+    @Override
+    public void onShowPress(MotionEvent motionEvent) {
+
+    }
+
+    @Override
+    public boolean onSingleTapUp(MotionEvent motionEvent) {
+        return false;
+    }
+
+    @Override
+    public boolean onScroll(MotionEvent motionEvent, MotionEvent motionEvent1, float v, float v1) {
+        return false;
+    }
+
+    @Override
+    public void onLongPress(MotionEvent motionEvent) {
+
+    }
+
+    @Override
+    public boolean onFling(MotionEvent motionEvent, MotionEvent motionEvent1, float v, float v1) {
+        return false;
+    }
 }
 
