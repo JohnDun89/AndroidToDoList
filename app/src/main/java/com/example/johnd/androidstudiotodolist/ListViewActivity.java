@@ -49,10 +49,10 @@ public class ListViewActivity extends BaseActivity  {
         listView.setAdapter(listViewAdapter);
 
 
-        final SwipeToDismissTouchListener<com.hudomju.swipe.adapter.ListViewAdapter> touchListener =
-                new SwipeToDismissTouchListener<>(
+        final OverrideTouch<com.hudomju.swipe.adapter.ListViewAdapter> touchListener =
+                new OverrideTouch<>(
                         new com.hudomju.swipe.adapter.ListViewAdapter(listView),
-                        new SwipeToDismissTouchListener.DismissCallbacks<com.hudomju.swipe.adapter.ListViewAdapter>() {
+                        new OverrideTouch.DismissCallbacks<com.hudomju.swipe.adapter.ListViewAdapter>() {
                             @Override
                             public boolean canDismiss(int position) {
                                 return true;
@@ -91,6 +91,8 @@ public class ListViewActivity extends BaseActivity  {
        touchListener.processPendingDismisses();
 
         listView.setOnTouchListener(touchListener);
+
+
         listView.setOnScrollListener((AbsListView.OnScrollListener) touchListener.makeScrollListener());
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
