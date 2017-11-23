@@ -30,6 +30,8 @@ public class MainActivity extends BaseActivity {
         mTextMessage = (TextView) findViewById(R.id.message);
         BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.navigation);
         navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
+//        bottomNavigationView.setItemIconTintList(ColorStateList.valueOf(Color.WHITE));
+
 
 //        mDBHelper = new DatabaseHelper(this);
 //        mDataBase = mDBHelper.getWritableDatabase();
@@ -41,7 +43,6 @@ public class MainActivity extends BaseActivity {
         Log.d("MainActivity", "Add Button clicked");
         Intent intent = new Intent(this, AddForm.class);
         startActivity(intent);
-        bottomNavigationView.setItemIconTintList(ColorStateList.valueOf(Color.WHITE));
 
 
     }

@@ -32,11 +32,11 @@ public class AddForm extends BaseActivity {
         mDBHelper = new DatabaseHelper(this);
         mDataBase = mDBHelper.getWritableDatabase();
 
-//        mDataBase.close();
+        mDataBase.close();
 
         editTitle = (EditText) findViewById(R.id.edit_title);
         editDescription = (EditText) findViewById(R.id.edit_description);
-        editPriority = (EditText) findViewById(R.id.edit_priority);
+//        editPriority = (EditText) findViewById(R.id.edit_priority);
         submit_button = (Button) findViewById(R.id.submit_button);
         addData();
 
@@ -50,42 +50,45 @@ public class AddForm extends BaseActivity {
     public void nameClicked(View view) {
         if (view == editTitle) {
             editTitle.setText("");
-            editTitle.addTextChangedListener(new TextWatcher() {
-                @Override
-                public void beforeTextChanged(CharSequence charSequence, int start, int before, int count) {
-                    if (charSequence.toString().equals("")){
-                        submit_button.setEnabled(false);
-                    } else {
-                        submit_button.setEnabled(true);
-                    }
-                }
-
-                @Override
-                public void onTextChanged(CharSequence charSequence, int start, int before, int count) {
-
-                }
-
-                @Override
-                public void afterTextChanged(Editable editable) {
-
-                }
-            });
         }
     }
-
-    public void descriptionClicked(View view) {
-        if (view == editDescription) {
-            editDescription.setText("");
-        }
-    }
-
-
-
-
-//    public void priorityClicked(View view){
-//        if (view == editPriority) {
-//            editPriority.setText("");
+//            editTitle.addTextChangedListener(new TextWatcher() {
+//                @Override
+//                public void beforeTextChanged(CharSequence charSequence, int start, int before, int count) {
+//                    if (charSequence.toString().equals("")){
+//                        submit_button.setEnabled(false);
+//                    } else {
+//                        submit_button.setEnabled(true);
+//                    }
+//                }
+//
+//                @Override
+//                public void onTextChanged(CharSequence charSequence, int start, int before, int count) {
+//
+//                }
+//
+//                @Override
+//                public void afterTextChanged(Editable editable) {
+//
+//                }
+//            });
 //        }
+//    }
+
+//    public void descriptionClicked(View view) {
+//        if (view == editDescription) {
+//            editDescription.setText("");
+//        }
+//    }
+
+
+
+
+    public void priorityClicked(View view) {
+        if (view == editPriority) {
+            editPriority.setText("");
+        }
+    }
 
 
     public void addData() {

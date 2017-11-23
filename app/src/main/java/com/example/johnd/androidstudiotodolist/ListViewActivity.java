@@ -28,7 +28,7 @@ public class ListViewActivity extends BaseActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_list_view);
 
-       final SwipeDetector swipeDetector = new SwipeDetector();
+//       final SwipeDetector swipeDetector = new SwipeDetector();
 
 //        List list = new List();
 
@@ -48,23 +48,23 @@ public class ListViewActivity extends BaseActivity {
         BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.navigation);
         navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
 
-        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-                if (swipeDetector.swipeDetected()){
-                    if (swipeDetector.getAction() == SwipeDetector.Action.RL){
-
-                        ListItem listItem = (ListItem) view.getTag();
-
-                        listItem.flipComplete();
-
-                        DatabaseHelper db = new DatabaseHelper(ListViewActivity.this);
-
-                        db.update(listItem);
-                    }
-                }
-            }
-        });
+//        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+//            @Override
+//            public void onSwipe(AdapterView<?> adapterView, View view, int i, long l) {
+//                if (swipeDetector.swipeDetected()){
+//                    if (swipeDetector.getAction() == SwipeDetector.Action.RL){
+//
+//                        ListItem listItem = (ListItem) view.getTag();
+//
+//                        listItem.flipComplete();
+//
+//                        DatabaseHelper db = new DatabaseHelper(ListViewActivity.this);
+//
+//                        db.update(listItem);
+//                    }
+//                }
+//            }
+//        });
 
 
 
@@ -72,16 +72,18 @@ public class ListViewActivity extends BaseActivity {
 
 
 
-//        public void onSwipe(View view){
+        public void onSwipe(View view){
+
+
 //        SwipeDetector swipeDetector = new SwipeDetector();
-//
-//
-//        ListItem listItem = (ListItem) view.getTag();
-//        listItem.flipComplete();
-//
-//        DatabaseHelper db = new DatabaseHelper(this);
-//
-//        }
+
+
+        ListItem listItem = (ListItem) view.getTag();
+        listItem.flipComplete();
+
+        DatabaseHelper db = new DatabaseHelper(this);
+
+        }
 
 
 

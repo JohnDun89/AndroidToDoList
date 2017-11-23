@@ -44,9 +44,9 @@
 
     <EditText
         android:id="@+id/edit_description"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="48dp"
+        android:layout_width="214dp"
+        android:layout_height="53dp"
+        android:layout_marginBottom="72dp"
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
         android:backgroundTint="@color/colorAccent"
@@ -55,32 +55,16 @@
         android:onClick="descriptionClicked"
         android:text="@string/description"
         android:textColor="@color/white"
-        app:layout_constraintBottom_toTopOf="@+id/edit_priority"
+        app:layout_constraintBottom_toTopOf="@+id/submit_button"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         tools:text="@string/description" />
-
-    <EditText
-        android:id="@+id/edit_priority"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="88dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginStart="8dp"
-        android:backgroundTint="@color/colorAccent"
-        android:ems="10"
-        android:inputType="textPersonName"
-        android:textColor="@color/white"
-        app:layout_constraintBottom_toTopOf="@+id/submit_button"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.503"
-        app:layout_constraintStart_toStartOf="parent" />
 
     <Button
         android:id="@+id/submit_button"
         android:layout_width="124dp"
         android:layout_height="62dp"
-        android:layout_marginBottom="52dp"
+        android:layout_marginBottom="56dp"
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
         android:background="@color/colorPrimary"
@@ -94,11 +78,5 @@
         app:layout_constraintBottom_toTopOf="@+id/navigation"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
-
-    <RadioGroup
-        android:layout_width="250dp"
-        android:layout_height="37dp"
-        tools:layout_editor_absoluteX="68dp"
-        tools:layout_editor_absoluteY="288dp" />
 
 </android.support.constraint.ConstraintLayout>
