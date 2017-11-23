@@ -55,13 +55,13 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         return mDatabaseInstance;
     }
 
-    public boolean insertData(String title, String description, String priority) {
+    public boolean insertData(String title, String description) {
         SQLiteDatabase sqLiteDatabase = this.getWritableDatabase();
         ContentValues contentValues = new ContentValues();
         contentValues.put(COL_TITLE, title);
         contentValues.put(COL_DESCRIPTION, description);
         contentValues.put(COL_COMPLETED, false);
-        contentValues.put(COL_PRIORITY, priority);
+//        contentValues.put(COL_PRIORITY, priority);
         sqLiteDatabase.insert(TABLE_NAME, null, contentValues);
         return true;
     }
