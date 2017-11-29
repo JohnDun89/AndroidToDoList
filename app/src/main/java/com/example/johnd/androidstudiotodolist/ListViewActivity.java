@@ -1,6 +1,5 @@
 package com.example.johnd.androidstudiotodolist;
 
-import android.app.ListActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.BottomNavigationView;
@@ -12,9 +11,10 @@ import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.johnd.androidstudiotodolist.models.DatabaseHelper;
 import com.example.johnd.androidstudiotodolist.models.ListViewAdapter;
 import com.example.johnd.androidstudiotodolist.models.ListItem;
-import com.hudomju.swipe.SwipeToDismissTouchListener;
+import com.example.johnd.androidstudiotodolist.models.OverrideTouch;
 
 import java.util.ArrayList;
 

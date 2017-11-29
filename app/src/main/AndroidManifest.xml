@@ -27,7 +27,7 @@
             android:name=".StatisticsActivity"
             android:label="@string/title_activity_update" />
         <activity
-            android:name=".AddForm"
+            android:name=".AddFormActivity"
             android:label="@string/title_activity_add_form" />
         <activity
             android:name=".MoreScreenActivity"

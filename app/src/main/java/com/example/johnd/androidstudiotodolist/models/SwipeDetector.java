@@ -1,4 +1,4 @@
-package com.example.johnd.androidstudiotodolist;
+package com.example.johnd.androidstudiotodolist.models;
 
 import android.util.Log;
 import android.view.MotionEvent;

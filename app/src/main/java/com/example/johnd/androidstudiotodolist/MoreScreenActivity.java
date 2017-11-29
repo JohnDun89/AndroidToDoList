@@ -7,6 +7,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
 
+import com.example.johnd.androidstudiotodolist.models.DatabaseHelper;
 import com.example.johnd.androidstudiotodolist.models.ListItem;
 
 public class MoreScreenActivity extends BaseActivity {

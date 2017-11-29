@@ -54,13 +54,7 @@ public class ListItem implements Serializable {
         return this.completed;
     }
 
-//    public void complete(){
-//        this.completed = true;
-//    }
-//
-//    public void unComplete(){
-//        this.completed = false;
-//    }
+
 
     public void setCompleted(int status) {
         this.completed = status == 1;

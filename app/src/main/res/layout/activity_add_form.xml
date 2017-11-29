@@ -7,7 +7,7 @@
     android:layout_height="match_parent"
     android:background="@color/colorPrimaryDark"
 
-    tools:context="com.example.johnd.androidstudiotodolist.AddForm">
+    tools:context="com.example.johnd.androidstudiotodolist.AddFormActivity">
 
 
     <android.support.design.widget.BottomNavigationView

@@ -1,16 +1,5 @@
 package com.example.johnd.androidstudiotodolist.models;
 
-import android.content.Context;
-import android.database.Cursor;
-import android.widget.Toast;
-
-
-import com.example.johnd.androidstudiotodolist.DatabaseHelper;
-import com.example.johnd.androidstudiotodolist.models.ListItem;
-
-import java.util.ArrayList;
-import java.util.Iterator;
-
 /**
  * Created by JohnD on 17/11/2017.
  */

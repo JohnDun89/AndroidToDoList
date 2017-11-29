@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.support.design.widget.BottomNavigationView;
 import android.widget.TextView;
 
+import com.example.johnd.androidstudiotodolist.models.DatabaseHelper;
 import com.example.johnd.androidstudiotodolist.models.ListItem;
 import com.example.johnd.androidstudiotodolist.models.Statistics;
 

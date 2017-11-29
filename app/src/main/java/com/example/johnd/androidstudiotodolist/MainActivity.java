@@ -1,16 +1,9 @@
 package com.example.johnd.androidstudiotodolist;
 
-import android.app.ListActivity;
 import android.content.Intent;
-import android.content.res.ColorStateList;
-import android.database.sqlite.SQLiteDatabase;
-import android.graphics.Color;
 import android.os.Bundle;
-import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
-import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
-import android.view.MenuItem;
 import android.view.View;
 import android.widget.TextView;
 
@@ -41,7 +34,7 @@ public class MainActivity extends BaseActivity {
 //    @Override
     public void onAddbuttonClicked(View view){
         Log.d("MainActivity", "Add Button clicked");
-        Intent intent = new Intent(this, AddForm.class);
+        Intent intent = new Intent(this, AddFormActivity.class);
         startActivity(intent);
 
 

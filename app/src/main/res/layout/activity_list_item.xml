@@ -11,69 +11,52 @@
 
     <FrameLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="0dp">
 
         <android.support.constraint.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
 
+            <TextView
+                android:id="@+id/to_do_title"
+                android:layout_width="266dp"
+                android:layout_height="55dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:text="@string/to_do_title"
+                android:textAlignment="viewStart"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
 
-        <TextView
-            android:id="@+id/to_do_title"
-            android:layout_width="266dp"
-            android:layout_height="55dp"
-            android:layout_marginStart="16dp"
-            android:layout_marginTop="16dp"
-            android:text="@string/to_do_title"
-            android:textAlignment="viewStart"
-            android:textSize="20sp"
-            android:textStyle="bold"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            <Button
+                android:id="@+id/more_button"
+                style="@android:style/Widget.Button.Inset"
+                android:layout_width="40dp"
+                android:layout_height="34dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginTop="24dp"
+                android:background="@drawable/ic_control_point_black_24dp"
+                android:backgroundTint="@android:color/background_light"
+                android:color="@color/colorPrimary"
+                android:onClick="onMoreButtonClicked"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
 
-        <Switch
-            android:id="@+id/completed_switch"
-            android:layout_width="116dp"
-            android:layout_height="29dp"
-            android:layout_marginBottom="1dp"
-            android:layout_marginEnd="8dp"
-            android:layout_marginStart="8dp"
-            android:layout_marginTop="1dp"
-            android:checked="true"
-            android:color="@color/colorPrimaryDark"
-            android:onClick="onSwitch"
-            android:shadowColor="@color/colorPrimaryDark"
-            android:splitTrack="false"
-            android:switchTextAppearance="@style/TextAppearance.AppCompat.Body2"
-            android:text="Completed"
-            android:textColor="@color/white"
-            android:textColorHighlight="@color/colorPrimaryDark"
-            android:textColorHint="@color/colorPrimaryDark"
-            android:textColorLink="@color/colorPrimaryDark"
-            android:textOff="Still To Do"
-            android:textOn="Completed"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.067"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/to_do_title"
-            app:layout_constraintVertical_bias="0.0"
-            tools:checked="false" />
-
-        <Button
-            android:id="@+id/more_button"
-            style="@android:style/Widget.Button.Inset"
-            android:layout_width="40dp"
-            android:layout_height="34dp"
-            android:layout_marginEnd="16dp"
-            android:layout_marginTop="24dp"
-            android:background="@drawable/ic_control_point_black_24dp"
-            android:backgroundTint="@android:color/background_light"
-            android:color="@color/colorPrimary"
-            android:onClick="onMoreButtonClicked"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            <TextView
+                android:id="@+id/state_display"
+                android:layout_width="88dp"
+                android:layout_height="31dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginStart="8dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.028"
+                app:layout_constraintStart_toStartOf="parent"
+                tools:layout_editor_absoluteY="71dp" />
 
         </android.support.constraint.ConstraintLayout>
 
