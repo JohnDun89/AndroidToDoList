@@ -16,4 +16,5 @@
     <string name="percentage">percentage</string>
     <string name="undo">Update</string>
     <string name="update">update</string>
+    <string name="State" />
 </resources>

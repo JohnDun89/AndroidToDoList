@@ -32,6 +32,7 @@ public class ListViewAdapter extends ArrayAdapter<ListItem> {
     public View getView(int position, View listItemView, ViewGroup parent) {
       if (listItemView == null) {
             listItemView = LayoutInflater.from(getContext()).inflate(R.layout.activity_list_item, parent, false);
+
         }
 
 
@@ -39,13 +40,17 @@ public class ListViewAdapter extends ArrayAdapter<ListItem> {
 
 
         ListItem currentListItem = getItem(position);
+        TextView completed = listItemView.findViewById(R.id.state);
 
         if (currentListItem.getComplete() == false){
             listItemView.setBackgroundColor(Color.parseColor("#232e40"));
+            completed.setText("Still To Do");
+
         } else {
             listItemView.setBackgroundColor(Color.parseColor("#de9b0d"));
-        }
+            completed.setText("Completed");
 
+        }
         TextView title = listItemView.findViewById(R.id.to_do_title);
         title.setText(currentListItem.getTitle().toString());
 
@@ -55,11 +60,11 @@ public class ListViewAdapter extends ArrayAdapter<ListItem> {
         Button moreButton = listItemView.findViewById(R.id.more_button);
         moreButton.setTag(currentListItem);
 
-        Switch view = (Switch) listItemView.findViewById(R.id.completed_switch);
-        view.setChecked(currentListItem.getComplete());
-
-
-        view.setTag(currentListItem);
+//        Switch view = (Switch) listItemView.findViewById(R.id.completed_switch);
+//        view.setChecked(currentListItem.getComplete());
+//
+//
+//        view.setTag(currentListItem);
 
         return listItemView;
     }
