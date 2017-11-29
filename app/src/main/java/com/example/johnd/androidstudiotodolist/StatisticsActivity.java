@@ -1,23 +1,18 @@
 package com.example.johnd.androidstudiotodolist;
 
-import android.content.Intent;
-import android.content.res.ColorStateList;
-import android.graphics.Color;
 import android.os.Bundle;
-import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
-import android.support.v7.app.AppCompatActivity;
-import android.view.MenuItem;
 import android.widget.TextView;
 
 import com.example.johnd.androidstudiotodolist.models.ListItem;
+import com.example.johnd.androidstudiotodolist.models.Statistics;
 
 import java.util.ArrayList;
 
 import az.plainpie.PieView;
 import az.plainpie.animation.PieAngleAnimation;
 
-public class SettingActivity extends BaseActivity {
+public class StatisticsActivity extends BaseActivity {
 
     private TextView mTextMessage;
 
@@ -28,7 +23,7 @@ public class SettingActivity extends BaseActivity {
 
 
 
-        DatabaseHelper databaseHelper = new DatabaseHelper(SettingActivity.this);
+        DatabaseHelper databaseHelper = new DatabaseHelper(StatisticsActivity.this);
         ArrayList<ListItem> itemsArray = databaseHelper.getAllItems();
         Statistics stats = new Statistics();
 

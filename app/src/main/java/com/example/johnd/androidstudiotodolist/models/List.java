@@ -17,14 +17,13 @@ import java.util.Iterator;
 
 public class List {
 
-//    private ArrayList<ListItem> ToDoList;
-    DatabaseHelper databaseHelper;
-    Cursor databaseItems;
-
-//    public List() {
+//   private ArrayList<ListItem> ToDoList;
+//    DatabaseHelper databaseHelper;
+//    Cursor databaseItems;
+//        public List() {
 //
 //
-//    DatabaseHelper databaseHelper = new DatabaseHelper();
+//            DatabaseHelper databaseHelper = new DatabaseHelper();
 //
 ////        ToDoList.add(new ListItem("buy coffee"));
 ////        ToDoList.add(new ListItem("paint door"));
@@ -32,14 +31,15 @@ public class List {
 ////        ToDoList.add(new ListItem("create scrolling on android list view."));
 ////        ToDoList.add(new ListItem("finish oil painting"));
 ////        ToDoList.add(new ListItem("cancel gym membership"));
-////        ToDoList.add(new ListItem("pratice illustrator"));
+
 ////        ToDoList.add(new ListItem("visit barbers"));
-////    }
+    }
 ////
 ////
 //////
-////    public void addItem(ListItem listItem){
-////        ToDoList.add(listItem);
+//
+//    public void addItem(ListItem listItem) {
+//        ToDoList.add(listItem);
 ////    }
 //////
 ////    public ArrayList<ListItem> getList(){
@@ -59,6 +59,3 @@ public class List {
 ////
 ////        }
 //    }
-
-
-}

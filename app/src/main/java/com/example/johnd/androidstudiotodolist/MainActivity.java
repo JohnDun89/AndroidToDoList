@@ -39,7 +39,7 @@ public class MainActivity extends BaseActivity {
     }
 
 //    @Override
-    protected void onAddbuttonClicked(View view){
+    public void onAddbuttonClicked(View view){
         Log.d("MainActivity", "Add Button clicked");
         Intent intent = new Intent(this, AddForm.class);
         startActivity(intent);

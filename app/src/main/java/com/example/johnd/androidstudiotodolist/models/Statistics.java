@@ -1,4 +1,4 @@
-package com.example.johnd.androidstudiotodolist;
+package com.example.johnd.androidstudiotodolist.models;
 
 import android.content.res.ColorStateList;
 import android.graphics.Color;

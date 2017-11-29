@@ -1,7 +1,6 @@
 package com.example.johnd.androidstudiotodolist;
 
-import com.example.johnd.androidstudiotodolist.models.List;
-import com.example.johnd.androidstudiotodolist.models.ListItem;
+import com.example.johnd.androidstudiotodolist.models.Statistics;
 
 import org.junit.Test;
 

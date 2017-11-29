@@ -24,7 +24,7 @@
             android:name=".ListViewActivity"
             android:label="@string/title_activity_list_view" />
         <activity
-            android:name=".SettingActivity"
+            android:name=".StatisticsActivity"
             android:label="@string/title_activity_update" />
         <activity
             android:name=".AddForm"
